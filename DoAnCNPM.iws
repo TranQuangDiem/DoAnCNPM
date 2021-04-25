@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DoAnCNPM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
         <option value="HTML File" />
       </list>
     </option>
@@ -46,11 +50,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/sources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/fonts" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DoAnCNPM\src\main\resources\static\fonts" />
+      <recent name="D:\DoAnCNPM\src\main\resources\templates" />
+      <recent name="D:\DoAnCNPM\src\main\resources\static\css" />
       <recent name="D:\DoAnCNPM\src\main\java\sources" />
       <recent name="D:\DoAnCNPM\src\main\resources" />
     </key>
@@ -98,7 +105,8 @@
       <option name="presentableId" value="Default" />
       <updated>1619007030817</updated>
       <workItem from="1619007040895" duration="2248000" />
-      <workItem from="1619258902538" duration="11301000" />
+      <workItem from="1619258902538" duration="17235000" />
+      <workItem from="1619322794140" duration="13838000" />
     </task>
     <servers />
   </component>

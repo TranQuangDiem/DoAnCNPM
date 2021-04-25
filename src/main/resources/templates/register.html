@@ -1,0 +1,296 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>aranoz</title>
+    <link rel="icon" th:href="@{img/favicon.png}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" th:href="@{css/animate.css}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" th:href="@{css/all.css}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" th:href="@{css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" th:href="@{css/slick.css}">
+    <!-- style CSS -->
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+
+<body>
+
+<!--::header part start::-->
+<th:block th:include="/header.html"></th:block>
+<!-- Header part end-->
+
+<!--================login_part Area =================-->
+<section class="login_part padding_top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner">
+                        <h2>New to our Shop?</h2>
+                        <p>There are advances being made in science and technology
+                            everyday, and a good example of this is the</p>
+                        <a th:href="@{/login}" class="btn_3">Sign in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3>Welcome ! <br>
+                            Please Sign up now</h3>
+                        <form class="row contact_form" th:action="@{/dangky}" method="post" modelAttribute="User" novalidate="novalidate">
+
+                            <div class="col-md-12 form-group p_star">
+                                <span style="color: red" id="errorusername"></span>
+                                <input onkeyup="checkName()" type="text" required class="form-control" id="username" name="username" value=""
+                                       placeholder="Tên người dùng">
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <span style="color: red" id="erroremail" th:utext="${errorEmail}"></span>
+                                <input type="email" required onkeyup="validMail()" class="form-control" id="email" name="email" value=""
+                                       placeholder="Email">
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                                <span style="color: red" id="errorpassword"></span>
+                                <input onkeyup="checkPass()" type="password" required class="form-control" id="password" name="pass" value=""
+                                       placeholder="Mật khẩu">
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                                <span style="color: red" id="errorrepassword"></span>
+                                <input onkeyup="checkRepass()" type="password" required class="form-control" id="repassword" value=""
+                                       placeholder="Nhập lại mật khẩu">
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                                <span style="color: red" id="errorphone"></span>
+                                <input type="number" required class="form-control" id="phone" name="phone" value=""
+                                       placeholder="Số điện thoại">
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                                <span style="color: red"></span>
+                                <input type="text" required class="form-control" id="address" name="address" value=""
+                                       placeholder="Địa chỉ">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="submit" onclick="return validate();" value="create an account" class="btn_3">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================login_part end =================-->
+
+<!--::footer_part start::-->
+<th:block th:include="/footer.html"></th:block>
+<!--::footer_part end::-->
+<!-- jquery plugins here-->
+<script th:src="@{js/jquery-1.12.1.min.js}"></script>
+<!-- popper js -->
+<script th:src="@{js/popper.min.js}"></script>
+<!-- bootstrap js -->
+<script th:src="@{js/bootstrap.min.js}"></script>
+<!-- easing js -->
+<script th:src="@{js/jquery.magnific-popup.js}"></script>
+<!-- swiper js -->
+<script th:src="@{js/swiper.min.js}"></script>
+<!-- swiper js -->
+<script th:src="@{js/masonry.pkgd.js}"></script>
+<!-- particles js -->
+<script th:src="@{js/owl.carousel.min.js}"></script>
+<script th:src="@{js/jquery.nice-select.min.js}"></script>
+<!-- slick js -->
+<script th:src="@{js/slick.min.js}"></script>
+<script th:src="@{js/jquery.counterup.min.js}"></script>
+<script th:src="@{js/waypoints.min.js}"></script>
+<script th:src="@{js/contact.js}"></script>
+<script th:src="@{js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{js/jquery.form.js}"></script>
+<script th:src="@{js/jquery.validate.min.js}"></script>
+<script th:src="@{js/mail-script.js}"></script>
+<!-- custom js -->
+<script th:src="@{js/custom.js}"></script>
+<script>
+    // var regexUser = "^[a-z0-9._-]{8,15}$";
+    // var regexPass = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+    // var regexMail = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+    // var regexName = "^[\\p{L} .'-]+$";
+    // var regexSDT = "\\d{10}";
+    var flag = true;
+
+    // Lấy giá trị của một input
+    function getValue(id) {
+        return document.getElementById(id).value.trim();
+    }
+
+    // Hiển thị lỗi
+    function showError(key, mess) {
+        document.getElementById('error'+key).innerHTML = mess;
+    }
+
+    function checkName() {
+        var name = getValue('username');
+        if (name == '') {
+            flag = false;
+            showError('username', 'tên không được để trống');
+        } else if (name.length < 4) {
+            flag = false;
+            showError('username', 'tên phải ít nhất 4 ký tự');
+        }else {
+            showError('username', '');
+        }
+    }
+    var request;
+    // function kiemtramail() {
+    //     var empId = document.getElementById('email').value;
+    //     $.get({url: "/kiemtramail",data: {email: empId},success:show})
+    // }
+    // function show() {
+    //     document.getElementById('email_error').innerHTML = text;
+    //     if (request.readyState == 4) {
+    //         document.getElementById('email_error').innerHTML = request.responseText;
+    //     }
+    // }
+
+    function validMail() {
+        var empId = document.getElementById('email').value;
+        var url = "http://localhost:8080/kiemtramail?email=" + empId;
+
+        if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        try {
+            request.onreadystatechange = getInfo;
+            request.open("GET", url, true);
+            request.send();
+        } catch (e) {
+            alert("Unable to connect to server");
+        }
+    }
+    var kt = true;
+    function getInfo() {
+        // var email = document.getElementById('email').value;
+        if (request.readyState == 4||request.readyState==200) {
+            var val = request.responseText;
+            document.getElementById('erroremail').innerHTML = val;
+            if (val.length<1){
+                kt = false;
+            }else {
+                kt=true;
+            }
+        }
+        // if (!email.match(regexMail)) {
+        //     $('#email_error').text('Email của bạn không hợp lệ');
+        //     kt = true;
+        // }
+        // if (kt === false) {
+        //     $('#email_error').text('');
+        // }
+    }
+
+    function checkemail() {
+        var mailformat = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        var email = getValue('email');
+        // var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email == "") {
+            flag = false;
+            showError('email', 'Email không được bỏ trống')
+        }else if (!email.match(mailformat)) {
+            flag = false;
+            showError('email', 'email không hợp lệ vd(abc@gmail.com)');
+        }else {
+            showError('email', '');
+        }
+    }
+
+    function checkPass() {
+        var password = getValue('password');
+        var regexPass = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+        if (password == '') {
+            flag = false;
+            showError('password', 'mật khẩu không được để trống');
+        } else if (!password.match(regexPass)) {
+            flag = false;
+            showError('password', 'mật khẩu phải hơn 8 kí tự, có ít nhật 1 ký tự thường,hoa,số,ký tự đặc biệt');
+        }else {
+            showError('password', '');
+        }
+    }
+
+    function checkRepass() {
+        var repassword = getValue('repassword');
+        var password = getValue('password');
+        if (repassword==''){
+            showError('repassword', 'mật khẩu không được bỏ trống');
+        }else if (repassword != password) {
+            flag = false;
+            showError('repassword', 'mật khẩu không trùng khớp');
+        }else {
+            showError('repassword', '');
+        }
+    }
+
+    function checkSdt() {
+        var phone = getValue('phone');
+        if (phone == ''||phone.length!=10) {
+            flag = false;
+            showError('phone', 'số điện thoại nhập không đúng');
+        }else {
+            showError('phone', '');
+        }
+    }
+
+    function checkAddress() {
+        var address = getValue('address');
+        if (address == '') {
+            flag = false;
+            showError('address', 'địa chỉ không được bỏ trống');
+        }else {
+            showError('address', '');
+        }
+    }
+
+    function validate() {
+        flag=true;
+        // 1 username
+        checkName();
+        // 2. password
+        checkPass();
+        checkRepass();
+        // 3. Phone
+        checkSdt()
+        // 4. Email
+        checkemail();
+        //5.địa chỉ
+        var address = getValue('address');
+        if (address == '') {
+            flag = false;
+            showError('address', 'địa chỉ không được bỏ trống')
+        }
+        return flag;
+    }
+</script>
+</body>
+
+</html>

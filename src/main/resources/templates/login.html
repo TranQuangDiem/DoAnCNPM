@@ -42,7 +42,7 @@
                             <h2>New to our Shop?</h2>
                             <p>There are advances being made in science and technology
                                 everyday, and a good example of this is the</p>
-                            <a href="#" class="btn_3">Create an Account</a>
+                            <a th:href="@{/dangky}" class="btn_3">Create an Account</a>
                         </div>
                     </div>
                 </div>
@@ -52,14 +52,15 @@
                             <h3>Welcome Back ! <br>
                                 Please Sign in now</h3>
                             <form class="row contact_form" th:action="@{/login}" method="post" novalidate="novalidate">
-                                <span style="color: red" th:text="${error}"></span>
+
                                 <div class="col-md-12 form-group p_star">
+                                    <span style="color: red" th:text="${error}"></span>
                                     <input type="email" required class="form-control" id="email" name="email" value=""
                                         placeholder="Email">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
                                     <input type="password" required class="form-control" id="password" name="pass" value=""
-                                        placeholder="Password">
+                                        placeholder="Mật khẩu">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">

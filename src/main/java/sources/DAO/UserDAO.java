@@ -7,4 +7,6 @@ import sources.entity.User;
 public interface UserDAO extends JpaRepository<User, Long> {
 
      User findByEmailAndPass(String email, String pass);
+     User findByEmail(String email);
+
 }

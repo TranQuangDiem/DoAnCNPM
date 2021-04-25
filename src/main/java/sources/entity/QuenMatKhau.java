@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "quenmatkhau")
@@ -16,5 +16,5 @@ public class QuenMatKhau {
 
     private String email;
     private int otp;
-    private Date ngayhethan;
+    private Timestamp ngaytao;
 }
