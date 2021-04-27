@@ -3,18 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +39,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/fonts" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -106,7 +97,8 @@
       <updated>1619007030817</updated>
       <workItem from="1619007040895" duration="2248000" />
       <workItem from="1619258902538" duration="17235000" />
-      <workItem from="1619322794140" duration="13838000" />
+      <workItem from="1619322794140" duration="14200000" />
+      <workItem from="1619535296110" duration="55000" />
     </task>
     <servers />
   </component>
