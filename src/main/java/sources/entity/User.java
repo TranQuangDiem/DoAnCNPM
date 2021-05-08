@@ -14,12 +14,11 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String email;
     private String pass;
     private String username;
-    private int phone;
+    private String phone;
     private String address;
     private boolean isLogin;
-    private boolean isActive;
+    private int active;
 }

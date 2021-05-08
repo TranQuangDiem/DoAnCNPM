@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" >
 
 <head>
     <!-- Required meta tags -->
@@ -55,7 +55,7 @@
 
                             <div class="col-md-12 form-group p_star">
                                 <span style="color: red" id="errorusername"></span>
-                                <input onkeyup="checkName()" type="text" required class="form-control" id="username" name="username" value=""
+                                <input onkeyup="checkName()" type="text" required autofocus class="form-control" id="username" name="username" value=""
                                        placeholder="Tên người dùng">
                             </div>
                             <div class="col-md-12 form-group p_star">
@@ -78,7 +78,7 @@
 
                             <div class="col-md-12 form-group p_star">
                                 <span style="color: red" id="errorphone"></span>
-                                <input type="number" required class="form-control" id="phone" name="phone" value=""
+                                <input type="number" required class="form-control" id="phone" name="phone" value="0"
                                        placeholder="Số điện thoại">
                             </div>
 
@@ -279,15 +279,10 @@
         checkPass();
         checkRepass();
         // 3. Phone
-        checkSdt()
+        // checkSdt()
         // 4. Email
         checkemail();
-        //5.địa chỉ
-        var address = getValue('address');
-        if (address == '') {
-            flag = false;
-            showError('address', 'địa chỉ không được bỏ trống')
-        }
+
         return flag;
     }
 </script>
