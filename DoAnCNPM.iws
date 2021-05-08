@@ -8,30 +8,8 @@
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/single-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +124,11 @@
       <workItem from="1620364865971" duration="1717000" />
       <workItem from="1620393249590" duration="11487000" />
       <workItem from="1620443364775" duration="9985000" />
+<<<<<<< HEAD
+>>>>>>> diem
+=======
+      <workItem from="1620455253867" duration="603000" />
+      <workItem from="1620483064697" duration="1307000" />
 >>>>>>> diem
     </task>
     <servers />

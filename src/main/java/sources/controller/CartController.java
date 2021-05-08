@@ -127,7 +127,7 @@ public class CartController {
         session.setAttribute("myCartNum", ""+cartItems.size());
         return ls;
     }
-    public double totalPrice(HashMap<Long, Cart> cartItems) {
+    public long totalPrice(HashMap<Long, Cart> cartItems) {
         int count = 0;
         for (Map.Entry<Long, Cart> list : cartItems.entrySet()) {
             count += list.getValue().getProduct().get().getGia() * list.getValue().getSoluong();
