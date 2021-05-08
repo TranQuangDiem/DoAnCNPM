@@ -6,28 +6,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>aranoz</title>
-    <link rel="icon" th:href="@{img/favicon.png}">
+    <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
-    <link rel="stylesheet" th:href="@{css/animate.css}">
+    <link rel="stylesheet" href="css/animate.css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/lightslider.min.css">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" th:href="@{css/all.css}">
+    <link rel="stylesheet" href="css/all.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" th:href="@{css/flaticon.css}">
-    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" th:href="@{css/slick.css}">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- style CSS -->
-    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <th:block th:include="/header.html"></th:block>
+<!--::header part start::-->
+<th:block th:include="/header.html"></th:block>
 
     <!-- banner part start-->
     <section class="banner_part">
@@ -118,7 +118,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section_tittle text-center">
-                        <h2>cchchh</h2>
+                        <h2>Sản phẩm nổi bật</h2>
                     </div>
                 </div>
             </div>
@@ -166,7 +166,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle text-center">
-                        <h2>awesome <span>shop</span></h2>
+                        <h2>Sản phẩm đang Hot <span>shop</span></h2>
                     </div>
                 </div>
             </div>
@@ -175,170 +175,19 @@
                     <div class="product_list_slider owl-carousel">
                         <div class="single_product_list_slider">
                             <div class="row align-items-center justify-content-between">
-                                <div class="col-lg-3 col-sm-6">
+                                <div class="col-lg-3 col-sm-6" th:each="product : ${product}">
                                     <div class="single_product_item">
-                                        <img src="img/product/product_1.png" alt="">
+                                        <a th:href="@{/chitietsanpham(id=${product.getId()})}">
+                                        <img th:src="${product.getImg()}" alt="">
+                                        </a>
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <h4 th:text="${product.getTen()}"></h4>
+                                            <h3 th:text="${product.getGia()}+ ' VNĐ'"></h3>
+                                            <a th:onclick="'addItem('+${product.getId()}+')'"  class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_2.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_3.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_4.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_5.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_6.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_7.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_8.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_product_list_slider">
-                            <div class="row align-items-center justify-content-between">
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_1.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_2.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_3.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_4.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_5.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_6.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_7.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="img/product/product_8.png" alt="">
-                                        <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -356,46 +205,21 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle text-center">
-                        <h2>Best Sellers <span>shop</span></h2>
+                        <h2>Đang sale <span>shop</span></h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-12">
                     <div class="best_product_slider owl-carousel">
-                        <div class="single_product_item">
-                            <img src="img/product/product_1.png" alt="">
+                        <div class="single_product_item" th:each="product : ${productSale}">
+                            <a th:href="@{/chitietsanpham(id=${product.getId()})}">
+                                <img th:src="${product.getImg()}" alt="">
+                            </a>
                             <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="img/product/product_2.png" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="img/product/product_3.png" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="img/product/product_4.png" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="img/product/product_5.png" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                                <h4 th:text="${product.getTen()}"></h4>
+                                <h3 th:text="${product.getGia()}+ ' VNĐ'"></h3>
+                                <a th:onclick="'addItem('+${product.getId()}+')'"  class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                             </div>
                         </div>
                     </div>
@@ -408,33 +232,52 @@
     <!--::footer_part start::-->
     <th:block th:include="/footer.html"></th:block>
     <!--::footer_part end::-->
-
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="js/lightslider.min.js"></script>
+<!-- swiper js -->
+<script src="js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="js/slick.min.js"></script>
+<script src="js/swiper.jquery.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/stellar.js"></script>
+<!-- custom js -->
+<script src="js/theme.js"></script>
+<script src="js/custom.js"></script>
     <!-- jquery plugins here-->
-    <script th:src="@{js/jquery-1.12.1.min.js}"></script>
-    <!-- popper js -->
-    <script th:src="@{js/popper.min.js}"></script>
-    <!-- bootstrap js -->
-    <script th:src="@{js/bootstrap.min.js}"></script>
-    <!-- easing js -->
-    <script th:src="@{js/jquery.magnific-popup.js}"></script>
-    <!-- swiper js -->
-    <script th:src="@{js/swiper.min.js}"></script>
-    <!-- swiper js -->
-    <script th:src="@{js/masonry.pkgd.js}"></script>
-    <!-- particles js -->
-    <script th:src="@{js/owl.carousel.min.js}"></script>
-    <script th:src="@{js/jquery.nice-select.min.js}"></script>
-    <!-- slick js -->
-    <script th:src="@{js/slick.min.js}"></script>
-    <script th:src="@{js/jquery.counterup.min.js}"></script>
-    <script th:src="@{js/waypoints.min.js}"></script>
-    <script th:src="@{js/contact.js}"></script>
-    <script th:src="@{js/jquery.ajaxchimp.min.js}"></script>
-    <script th:src="@{js/jquery.form.js}"></script>
-    <script th:src="@{js/jquery.validate.min.js}"></script>
-    <script th:src="@{js/mail-script.js}"></script>
-    <!-- custom js -->
-    <script th:src="@{js/custom.js}"></script>
+
+  <script>
+      // var id=document.getElementById('idproduct').value;
+      function addItem(id) {
+          $.ajax({
+              url: "http://localhost:8080/them?id=" +id,
+              header:{
+                  Accept:"application/json; charset=utf-8","content-Type":"application/json; charset=utf-8"
+              },
+              success: function(data) {
+                  document.getElementById('soluong').innerHTML = data;
+                  // document.getElementById('addcart').innerHTML = "Đã thêm vào giỏ hàng";
+                  // document.getElementById('addcart').disabled=true;
+              }
+          })
+      }
+  </script>
 </body>
 
 </html>

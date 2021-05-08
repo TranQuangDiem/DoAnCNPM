@@ -3980,10 +3980,10 @@ ul {
   position: absolute;
   content: "";
   left: 0;
-  bottom: 7px;
+  /*bottom: 7px;*/
   width: 100%;
-  height: 1px;
-  background-color: #dddddd;
+  /*height: 1px;*/
+  /*background-color: #dddddd;*/
 }
 
 /* line 739, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */

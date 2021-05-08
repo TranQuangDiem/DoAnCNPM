@@ -5,33 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>aranoz</title>
-    <link rel="icon" th:href="@{img/favicon.png}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-    <!-- animate CSS -->
-    <link rel="stylesheet" th:href="@{css/animate.css}">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" th:href="@{css/all.css}">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" th:href="@{css/flaticon.css}">
-    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" th:href="@{css/slick.css}">
-    <!-- style CSS -->
-    <link rel="stylesheet" th:href="@{css/style.css}">
+
 </head>
 <body>
 <!--::header part start::-->
-<header class="main_menu home_menu">
+<header class="main_menu home_menu" style="background: #ecfdff;position: fixed;z-index: 999">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.html"> <img src="../static/img/logo.png" alt="logo"> </a>
+                    <a class="navbar-brand" href="index.html"> <img src="/img/logo.png" alt="logo"> </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -95,20 +78,25 @@
                                 <a class="dropdown-item" th:href="@{/logout}">Đăng xuất</a>
                             </div>
                         </div>
+                        <div class="dropdown" th:if="${session.user==null}">
+                           <a th:href="@{/login}">Đăng nhập</a>/
+                            <a th:href="@{/dangky}">Đăng ký</a>
+                        </div>
                         <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                         <a href=""><i class="ti-heart"></i></a>
-                        <div class="dropdown">
-                            <a class="dropdown" href="#" id="navbarDropdown3" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cart-plus"></i><span style="position: relative;top: -40%;background: red;color: white;border-radius: 100%;padding: 1px 4px 1px 4px;">5</span>
+<!--                        <div class="dropdown">-->
+                            <a class="dropdown" th:href="@{/cart}" >
+                                <i class="fas fa-cart-plus"></i>
+                                <span id="soluong" style="left: -10%;position: relative;top: -40%;background: red;color: white;border-radius: 100%;padding: 1px 4px 1px 4px;" th:if="${session.myCartNum==null}" >0</span>
+                                <span id="soluong" style="left:-10%;position: relative;top: -40%;background: red;color: white;border-radius: 100%;padding: 1px 4px 1px 4px;" th:if="${session.myCartNum!=null}" th:text="${session.myCartNum}" >0</span>
                             </a>
-                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <div class="single_product">
+<!--                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                                <div class="single_product">-->
 
-                                </div>
-                            </div>
+<!--                                </div>-->
+<!--                            </div>-->
 
-                        </div>
+<!--                        </div>-->
                     </div>
                 </nav>
             </div>
@@ -116,40 +104,43 @@
     </div>
     <div class="search_input" id="search_input_box">
         <div class="container ">
-            <form class="d-flex justify-content-between search-inner">
-                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                <button type="submit" class="btn"></button>
+            <form class="d-flex justify-content-between search-inner" method="get" th:action="@{/danhsachsanpham}">
+                <input onkeyup="timkiem()" type="text" class="form-control" name="search" id="search_input" placeholder="Search Here">
+                <button type="submit" style="background: none;border: none;color: #fff"><i class="ti-search"></i></button>
                 <span class="ti-close" id="close_search" title="Close Search"></span>
             </form>
+        </div>
+        <div class="table-responsive" style="background: #fff;margin: 0px">
+            <table class="table">
+                <tbody id="tim-kiem">
+                </tbody>
+            </table>
         </div>
     </div>
 </header>
 <!-- Header part end-->
-<!-- jquery plugins here-->
-<script th:src="@{js/jquery-1.12.1.min.js}"></script>
-<!-- popper js -->
-<script th:src="@{js/popper.min.js}"></script>
-<!-- bootstrap js -->
-<script th:src="@{js/bootstrap.min.js}"></script>
-<!-- easing js -->
-<script th:src="@{js/jquery.magnific-popup.js}"></script>
-<!-- swiper js -->
-<script th:src="@{js/swiper.min.js}"></script>
-<!-- swiper js -->
-<script th:src="@{js/masonry.pkgd.js}"></script>
-<!-- particles js -->
-<script th:src="@{js/owl.carousel.min.js}"></script>
-<script th:src="@{js/jquery.nice-select.min.js}"></script>
-<!-- slick js -->
-<script th:src="@{js/slick.min.js}"></script>
-<script th:src="@{js/jquery.counterup.min.js}"></script>
-<script th:src="@{js/waypoints.min.js}"></script>
-<script th:src="@{js/contact.js}"></script>
-<script th:src="@{js/jquery.ajaxchimp.min.js}"></script>
-<script th:src="@{js/jquery.form.js}"></script>
-<script th:src="@{js/jquery.validate.min.js}"></script>
-<script th:src="@{js/mail-script.js}"></script>
-<!-- custom js -->
-<script th:src="@{js/custom.js}"></script>
+<script>
+    function timkiem() {
+        var search = document.getElementById("search_input").value.trim();
+        var result="";
+        $.ajax({
+            url: "http://localhost:8080/search?name="+search,
+            success: function (data) {
+                for (var i =0 ; i < data.length ; i++){
+                    result+=' <tr>\n' +
+                        '                       <th>\n' +
+                        '                           <a href="#">\n' +
+                        '                               <img style="height: 80px;width: 80px" src="'+data[i].img+'" alt="">\n' +
+                        '                           </a>\n' +
+                        '                       </th>\n' +
+                        '                       <th style="padding: 4% 0px 0px 0px;"><a href="#">'+data[i].ten+'</a></th>\n' +
+                        '                       <th style="padding: 4% 0px 0px 0px;">'+data[i].gia+'</th>\n' +
+                        '                    </tr>';
+                }
+                document.getElementById('tim-kiem').innerHTML = result;
+            }
+        })
+    }
+</script>
 </body>
 </html>

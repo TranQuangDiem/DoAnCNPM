@@ -8,17 +8,58 @@
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/single-product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="DoAnCNPM" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
         <option value="HTML File" />
       </list>
     </option>
@@ -88,15 +129,39 @@
       <workItem from="1619007040895" duration="2248000" />
       <workItem from="1619258902538" duration="17235000" />
       <workItem from="1619322794140" duration="14200000" />
+<<<<<<< HEAD
       <workItem from="1619535296110" duration="55000" />
       <workItem from="1619536712686" duration="2018000" />
       <workItem from="1619859130583" duration="1803000" />
       <workItem from="1619945509260" duration="725000" />
+=======
+      <workItem from="1619535296110" duration="795000" />
+      <workItem from="1619595895292" duration="683000" />
+      <workItem from="1619786171782" duration="12147000" />
+      <workItem from="1619830474538" duration="13963000" />
+      <workItem from="1619869279267" duration="7301000" />
+      <workItem from="1620047777166" duration="3288000" />
+      <workItem from="1620109670962" duration="12245000" />
+      <workItem from="1620291292871" duration="11810000" />
+      <workItem from="1620364865971" duration="1717000" />
+      <workItem from="1620393249590" duration="11487000" />
+      <workItem from="1620443364775" duration="9985000" />
+>>>>>>> diem
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
