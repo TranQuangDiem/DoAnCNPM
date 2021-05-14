@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/single-product.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,6 +138,8 @@
       <workItem from="1620443364775" duration="9985000" />
       <workItem from="1620455253867" duration="603000" />
       <workItem from="1620483064697" duration="1307000" />
+      <workItem from="1620486118784" duration="1313000" />
+      <workItem from="1620959258256" duration="305000" />
     </task>
     <servers />
   </component>

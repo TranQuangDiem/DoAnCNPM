@@ -26,4 +26,6 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     List<String> getByLoai ();
     @Query(value = "select DISTINCT  mausac from product",nativeQuery = true)
     List<String> getByMausac ();
+    @Query(value = "select * from product order by gia asc ",nativeQuery = true)
+    List<Product> findAllOrderbyGia();
 }

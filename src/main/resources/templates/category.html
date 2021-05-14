@@ -210,6 +210,11 @@
                                            aria-label="Previous">
                                             <i class="ti-angle-double-left"></i>
                                         </a>
+                                        <a class="page-link" th:if="${mausac==null&&type==null&&vitri==null}"
+                                           th:href="@{/danhsachsanpham( page=${pagePrivious})}"
+                                           aria-label="Previous">
+                                            <i class="ti-angle-double-left"></i>
+                                        </a>
                                     </li>
                                     <th:block th:each="pageNumber : ${pageNumbers}">
                                         <li th:class="${pageNumber==productPage.number + 1} ? 'page-item'+' active'">
@@ -221,6 +226,9 @@
                                                th:text="${pageNumber}"></a>
                                             <a class="page-link" th:if="${mausac!=null}"
                                                th:href="@{/danhsachsanpham(page=${pageNumber},mausac=${mausac})}"
+                                               th:text="${pageNumber}"></a>
+                                            <a class="page-link" th:if="${mausac==null&&type==null&&vitri==null}"
+                                               th:href="@{/danhsachsanpham(page=${pageNumber})}"
                                                th:text="${pageNumber}"></a>
                                         </li>
                                     </th:block>
@@ -237,6 +245,11 @@
                                         </a>
                                         <a class="page-link" th:if="${mausac!=null}"
                                            th:href="@{/danhsachsanpham(page=${pageMax},mausac=${mausac})}"
+                                           aria-label="Next">
+                                            <i class="ti-angle-double-right"></i>
+                                        </a>
+                                        <a class="page-link" th:if="${mausac==null&&type==null&&vitri==null}"
+                                           th:href="@{/danhsachsanpham(page=${pageMax})}"
                                            aria-label="Next">
                                             <i class="ti-angle-double-right"></i>
                                         </a>

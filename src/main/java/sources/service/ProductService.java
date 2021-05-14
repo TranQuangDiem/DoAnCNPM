@@ -81,6 +81,8 @@ public class ProductService {
             products = productDAO.findByTenLike(search);
         }else if (mausac!=null){
             products = productDAO.findByMausacOrderByTenAsc(mausac);
+        }else if (sort.equals("gia")){
+            products=productDAO.findAllOrderbyGia();
         }
         return products;
     }
