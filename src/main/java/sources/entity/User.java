@@ -21,4 +21,7 @@ public class User implements Serializable {
     private String address;
     private boolean isLogin;
     private int active;
+    @OneToOne
+    @JoinColumn(name = "level")
+    private Role level;
 }

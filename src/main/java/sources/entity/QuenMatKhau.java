@@ -13,7 +13,6 @@ import java.sql.Timestamp;
 public class QuenMatKhau {
 
     @Id
-
     private String email;
     private int otp;
     private Timestamp ngaytao;

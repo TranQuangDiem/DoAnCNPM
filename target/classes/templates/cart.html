@@ -2,315 +2,280 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>aranaz</title>
-  <link rel="icon" href="img/favicon.png">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- animate CSS -->
-  <link rel="stylesheet" href="css/animate.css">
-  <!-- owl carousel CSS -->
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/lightslider.min.css">
-  <!-- font awesome CSS -->
-  <link rel="stylesheet" href="css/all.css">
-  <!-- flaticon CSS -->
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/themify-icons.css">
-  <!-- font awesome CSS -->
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <!-- style CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>aranaz</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/lightslider.min.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!--::header part start::-->
-  <th:block th:include="/header.html"></th:block>
-  <!-- Header part end-->
+<!--::header part start::-->
+<th:block th:include="/header.html"></th:block>
+<!-- Header part end-->
 
 
-  <!--================Home Banner Area =================-->
+<!--================Home Banner Area =================-->
 
-  <!--================Cart Area =================-->
-  <section class="cart_area padding_top">
+<!--================Cart Area =================-->
+<section class="cart_area padding_top">
     <div class="container">
-      <div class="cart_inner">
-        <div class="table-responsive" th:if="${session.myCartItems!=null}">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Product</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody id="san-pham">
-              <tr th:each="cartItem : ${session.myCartItems}">
-                <td>
-                  <div class="media">
-                    <div class="d-flex">
-                      <img style="height: 100px;width: 100px" th:src="${cartItem.getValue().getProduct().get().getImg()}" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <p th:text="${cartItem.getValue().getProduct().get().getTen()}"></p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <h5 th:text="${cartItem.getValue().getProduct().get().getGia()}"></h5>
-                </td>
-                <td>
-                  <div class="product_count">
-                    <button style="border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px" th:id="'tang'+${cartItem.getValue().getProduct().get().getId()}" class="input-number-decrement" th:onclick="'giam('+${cartItem.getValue().getProduct().get().getId()}+')'"> <i class="ti-angle-down"></i></button>
-                    <input th:id="'soluong'+${cartItem.getValue().getProduct().get().getId()}" class="input-number" disabled type="text" th:value="${cartItem.getValue().getSoluong()}" min="0" th:max="${cartItem.getValue().getProduct().get().getSoluong()}">
-                    <span style="padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ; top: 0px" th:id="'giam'+${cartItem.getValue().getProduct().get().getId()}" class="input-number-increment" th:onclick="'them('+${cartItem.getValue().getProduct().get().getId()}+')'"> <i class="ti-angle-up"></i></span>
-                  </div>
-                </td>
-                <td>
-                  <h5 th:text="${cartItem.getValue().getProduct().get().getGia()*cartItem.getValue().getSoluong()}"></h5>
-                </td>
-              </tr>
-            </tbody>
-              <tr class="bottom_button">
-                <td>
-<!--                  <a class="btn_1" href="#">Update Cart</a>-->
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                  <div class="cupon_text float-right">
-                    <a class="btn_1" href="#">Close Coupon</a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <h5>Subtotal</h5>
-                </td>
-                <td>
-                  <h5 id="tong_tien" th:text="${session.myCartTotal}+' VNĐ'"></h5>
-                </td>
-              </tr>
-              <tr class="shipping_area">
-                <td></td>
-                <td></td>
-                <td>
-                  <h5>Shipping</h5>
-                </td>
-                <td>
-                  <div class="shipping_box">
-                    <ul class="list">
-                      <li>
-                        <a href="#">Flat Rate: $5.00</a>
-                      </li>
-                      <li>
-                        <a href="#">Free Shipping</a>
-                      </li>
-                      <li>
-                        <a href="#">Flat Rate: $10.00</a>
-                      </li>
-                      <li class="active">
-                        <a href="#">Local Delivery: $2.00</a>
-                      </li>
-                    </ul>
-                    <h6>
-                      Calculate Shipping
-                      <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </h6>
-                    <select class="shipping_select">
-                      <option value="1">Bangladesh</option>
-                      <option value="2">India</option>
-                      <option value="4">Pakistan</option>
-                    </select>
-                    <select class="shipping_select section_bg">
-                      <option value="1">Select a State</option>
-                      <option value="2">Select a State</option>
-                      <option value="4">Select a State</option>
-                    </select>
-                    <input type="text" placeholder="Postcode/Zipcode" />
-                    <a class="btn_1" href="#">Update Details</a>
-                  </div>
-                </td>
-              </tr>
-
-
-          </table>
-          <div class="checkout_btn_inner float-right">
-            <a class="btn_1" href="#">Continue Shopping</a>
-            <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
-          </div>
+        <div class="cart_inner">
+            <div class="table-responsive" th:if="${session.myCartItems!=null}">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Sản phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Tổng giá trị</th>
+                    </tr>
+                    </thead>
+                    <tbody id="san-pham">
+                    <tr th:each="cartItem : ${session.myCartItems}">
+                        <td>
+                            <div class="media">
+                                <div class="d-flex">
+                                    <img style="height: 100px;width: 100px"
+                                         th:src="${cartItem.getValue().getProduct().get().getImg()}" alt=""/>
+                                </div>
+                                <div class="media-body">
+                                    <p th:text="${cartItem.getValue().getProduct().get().getTen()}"></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 th:text="${cartItem.getValue().getProduct().get().getGia()}"></h5>
+                        </td>
+                        <td>
+                            <div class="product_count">
+                                <button style="border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px"
+                                        th:id="'tang'+${cartItem.getValue().getProduct().get().getId()}"
+                                        class="input-number-decrement"
+                                        th:onclick="'giam('+${cartItem.getValue().getProduct().get().getId()}+')'"><i
+                                        class="ti-angle-down"></i></button>
+                                <input th:id="'soluong'+${cartItem.getValue().getProduct().get().getId()}"
+                                       class="input-number" disabled type="text"
+                                       th:value="${cartItem.getValue().getSoluong()}" min="0"
+                                       th:max="${cartItem.getValue().getProduct().get().getSoluong()}">
+                                <span style="padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ; top: 0px"
+                                      th:id="'giam'+${cartItem.getValue().getProduct().get().getId()}"
+                                      class="input-number-increment"
+                                      th:onclick="'them('+${cartItem.getValue().getProduct().get().getId()}+')'"> <i
+                                        class="ti-angle-up"></i></span>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 th:text="${cartItem.getValue().getProduct().get().getGia()*cartItem.getValue().getSoluong()}"></h5>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <h5>Tổng tiền</h5>
+                        </td>
+                        <td>
+                            <h5 id="tong_tien" th:text="${session.myCartTotal}+' VNĐ'"></h5>
+                        </td>
+                    </tr>
+                </table>
+                <div class="checkout_btn_inner float-right">
+                    <form method="post" th:action="@{/pay}" th:if="${session.user!=null}">
+                        <input style="display: none" id="myCartTotal" type="text" th:value="${session.myCartTotal*0.000044}" name="price"/>
+                        <button style="border: none" class="btn_1" type="submit"> Thanh toán paypal</button>
+                    </form>
+                    <a class="btn_1" th:href="@{/login}" th:if="${session.user==null}">Thanh toán</a>
+                </div>
+            </div>
+            <h1 th:if="${session.myCartItems==null}">chưa có sản phẩm trong giỏ hàng</h1>
         </div>
-        <h1 th:if="${session.myCartItems==null}">chưa có sản phẩm trong giỏ hàng</h1>
-      </div>
     </div>
-  </section>
-  <!--================End Cart Area =================-->
+</section>
+<!--================End Cart Area =================-->
 
- <!--::footer_part start::-->
-  <th:block th:include="/footer.html"></th:block>
+<!--::footer_part start::-->
+<th:block th:include="/footer.html"></th:block>
 <!--::footer_part end::-->
-  <script src="js/jquery-1.12.1.min.js"></script>
-  <!-- popper js -->
-  <script src="js/popper.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- easing js -->
-  <script src="js/jquery.magnific-popup.js"></script>
-  <!-- swiper js -->
-  <script src="js/lightslider.min.js"></script>
-  <!-- swiper js -->
-  <script src="js/masonry.pkgd.js"></script>
-  <!-- particles js -->
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.nice-select.min.js"></script>
-  <!-- slick js -->
-  <script src="js/slick.min.js"></script>
-  <script src="js/swiper.jquery.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/contact.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
-  <script src="js/jquery.form.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="js/mail-script.js"></script>
-  <script src="js/stellar.js"></script>
-  <!-- custom js -->
-  <script src="js/theme.js"></script>
-  <script src="js/custom.js"></script>
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="js/lightslider.min.js"></script>
+<!-- swiper js -->
+<script src="js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="js/slick.min.js"></script>
+<script src="js/swiper.jquery.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/stellar.js"></script>
+<!-- custom js -->
+<script src="js/theme.js"></script>
+<script src="js/custom.js"></script>
 <script>
 
-  function them(id) {
-    // var a = "soluong"+id;
-    // var b = "tang"+id;
-    // var soluong = document.getElementById(a);
-    // if (soluong > soluong.max) {
-    //   document.getElementById(b).disabled = true;
-    //   document.getElementById(b).style.cursor="not-allowed";
-    // } else {
-    //   document.getElementById(b).disabled = false;
-    //   document.getElementById(b).style.cursor = "pointer";
-      var url = "http://localhost:8080/add?id=" + id;
-      var result = "";
-      var tongtien = 0;
-      $.ajax({
-        url: url,
-        success: function (data) {
-          for (var i = 0; i < data.length; i++) {
-            result += " <tr><td>\n" +
-                    "                  <div class=\"media\">\n" +
-                    "                    <div class=\"d-flex\">\n" +
-                    "                      <img style=\"height: 100px;width: 100px\" src=" + data[i].product.img + " alt=\"\" />\n" +
-                    "                    </div>\n" +
-                    "                    <div class=\"media-body\">\n" +
-                    "                      <p>" + data[i].product.ten + "</p>\n" +
-                    "                    </div>\n" +
-                    "                  </div>\n" +
-                    "                </td>\n" +
-                    "                <td>\n" +
-                    "                  <h5>" + data[i].product.gia + "</h5>\n" +
-                    "                </td>\n" +
-                    "                <td>\n" +
-                    "                  <div class=\"product_count\">\n" +
-                    "                    <button style=\"border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px\" id=giam"+data[i].product.id+" class=\"input-number-decrement\" onclick='giam(" + data[i].product.id + ")'> <i class=\"ti-angle-down\"></i></button>\n" +
-                    "                    <input id=soluong"+data[i].product.id+" class=\"input-number\" disabled type=\"text\" value=" + data[i].soluong + " min=\"0\">\n" +
-                    "                    <span style=\"padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ;top: 0px\" id=tang"+data[i].product.id+" class=\"input-number-increment\" onclick='them(" + data[i].product.id + ")'> <i class=\"ti-angle-up\"></i></span>\n" +
-                    "                  </div>\n" +
-                    "                </td>\n" +
-                    "                <td>\n" +
-                    "                  <h5>" + data[i].product.gia * data[i].soluong + "</h5>\n" +
-                    "                </td></tr>";
-            tongtien += data[i].product.gia * data[i].soluong;
-          }
-          document.getElementById('san-pham').innerHTML = result;
-          document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
-          document.getElementById('soluong').innerHTML = data.length;
-        }
-      })
-    // }
-  }
-  function giam(id) {
-      var url = "http://localhost:8080/giam?id=" + id;
-      var result = "";
-      var tongtien = 0;
-      $.ajax({
-        url: url,
-        success: function (data) {
-          for (var i = 0; i < data.length; i++) {
-            result += " <tr><td>\n" +
-                    "                  <div class=\"media\">\n" +
-                    "                    <div class=\"d-flex\">\n" +
-                    "                      <img style=\"height: 100px;width: 100px\" src=" + data[i].product.img + " alt=\"\" />\n" +
-                    "                    </div>\n" +
-                    "                    <div class=\"media-body\">\n" +
-                    "                      <p>" + data[i].product.ten + "</p>\n" +
-                    "                    </div>\n" +
-                    "                  </div>\n" +
-                    "                </td>\n" +
-                    "                <td>\n" +
-                    "                  <h5>" + data[i].product.gia + "</h5>\n" +
-                    "                </td>\n" +
-                    "                <td>\n" +
-                    "                  <div class=\"product_count\">\n" +
-                    "                    <button style=\"border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px\" id=giam"+data[i].product.id+" class=\"input-number-decrement\" onclick='giam(" + data[i].product.id + ")'> <i class=\"ti-angle-down\"></i></button>\n" +
-                    "                    <input id=soluong"+data[i].product.id+" class=\"input-number\" disabled type=\"text\" value=" + data[i].soluong + " min=\"0\" >\n" +
-                    "                    <span style=\"padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ;top: 0px\" id=tang"+data[i].product.id+" class=\"input-number-increment\" onclick='them(" + data[i].product.id + ")'> <i class=\"ti-angle-up\"></i></span>\n" +
-                    "                  </div>\n" +
-                    "                </td>\n" +
-                    "                <td>\n" +
-                    "                  <h5>" + data[i].product.gia * data[i].soluong + "</h5>\n" +
-                    "                </td></tr>";
-            tongtien += data[i].product.gia * data[i].soluong;
-          }
-          document.getElementById('san-pham').innerHTML = result;
-          document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
-          document.getElementById('soluong').innerHTML = data.length;
-        }
-      })
-  }
-  function xoa(id) {
-          var url = "http://localhost:8080/delete?id=" + id;
-          var result = "";
-          var tongtien = 0;
-          $.ajax({
-              url: url,
-              success: function (data) {
-                  for (var i = 0; i < data.length; i++) {
-                      result += " <tr><td>\n" +
-                          "                  <div class=\"media\">\n" +
-                          "                    <div class=\"d-flex\">\n" +
-                          "                      <img style=\"height: 100px;width: 100px\" src=" + data[i].product.img + " alt=\"\" />\n" +
-                          "                    </div>\n" +
-                          "                    <div class=\"media-body\">\n" +
-                          "                      <p>" + data[i].product.ten + "</p>\n" +
-                          "                    </div>\n" +
-                          "                  </div>\n" +
-                          "                </td>\n" +
-                          "                <td>\n" +
-                          "                  <h5>" + data[i].product.gia + "</h5>\n" +
-                          "                </td>\n" +
-                          "                <td>\n" +
-                          "                  <div class=\"product_count\">\n" +
-                          "                    <button style=\"border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px\" id=giam"+data[i].product.id+" class=\"input-number-decrement\" onclick='giam(" + data[i].product.id + ")'> <i class=\"ti-angle-down\"></i></button>\n" +
-                          "                    <input id=soluong"+data[i].product.id+" class=\"input-number\" disabled type=\"text\" value=" + data[i].soluong + " min=\"0\" >\n" +
-                          "                    <span style=\"padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ;top: 0px\" id=tang"+data[i].product.id+" class=\"input-number-increment\" onclick='them(" + data[i].product.id + ")'> <i class=\"ti-angle-up\"></i></span>\n" +
-                          "                  </div>\n" +
-                          "                </td>\n" +
-                          "                <td>\n" +
-                          "                  <h5>" + data[i].product.gia * data[i].soluong + "</h5>\n" +
-                          "                </td></tr>";
-                      tongtien += data[i].product.gia * data[i].soluong;
-                  }
-                  document.getElementById('san-pham').innerHTML = result;
-                  document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
-                  document.getElementById('soluong').innerHTML = data.length;
-              }
-          })
-  }
+    function them(id) {
+        // var a = "soluong"+id;
+        // var b = "tang"+id;
+        // var soluong = document.getElementById(a);
+        // if (soluong > soluong.max) {
+        //   document.getElementById(b).disabled = true;
+        //   document.getElementById(b).style.cursor="not-allowed";
+        // } else {
+        //   document.getElementById(b).disabled = false;
+        //   document.getElementById(b).style.cursor = "pointer";
+        var url = "http://localhost:8080/add?id=" + id;
+        var result = "";
+        var tongtien = 0;
+        $.ajax({
+            url: url,
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    result += " <tr><td>\n" +
+                        "                  <div class=\"media\">\n" +
+                        "                    <div class=\"d-flex\">\n" +
+                        "                      <img style=\"height: 100px;width: 100px\" src=" + data[i].product.img + " alt=\"\" />\n" +
+                        "                    </div>\n" +
+                        "                    <div class=\"media-body\">\n" +
+                        "                      <p>" + data[i].product.ten + "</p>\n" +
+                        "                    </div>\n" +
+                        "                  </div>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <h5>" + data[i].product.gia + "</h5>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <div class=\"product_count\">\n" +
+                        "                    <button style=\"border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px\" id=giam" + data[i].product.id + " class=\"input-number-decrement\" onclick='giam(" + data[i].product.id + ")'> <i class=\"ti-angle-down\"></i></button>\n" +
+                        "                    <input id=soluong" + data[i].product.id + " class=\"input-number\" disabled type=\"text\" value=" + data[i].soluong + " min=\"0\">\n" +
+                        "                    <span style=\"padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ;top: 0px\" id=tang" + data[i].product.id + " class=\"input-number-increment\" onclick='them(" + data[i].product.id + ")'> <i class=\"ti-angle-up\"></i></span>\n" +
+                        "                  </div>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <h5>" + data[i].product.gia * data[i].soluong + "</h5>\n" +
+                        "                </td></tr>";
+                    tongtien += data[i].product.gia * data[i].soluong;
+                }
+                document.getElementById('san-pham').innerHTML = result;
+                document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
+                document.getElementById('soluong').innerHTML = data.length;
+                document.getElementById('myCartTotal').value = tongtien*0.000044;
+            }
+        })
+        // }
+    }
+
+    function giam(id) {
+        var url = "http://localhost:8080/giam?id=" + id;
+        var result = "";
+        var tongtien = 0;
+        $.ajax({
+            url: url,
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    result += " <tr><td>\n" +
+                        "                  <div class=\"media\">\n" +
+                        "                    <div class=\"d-flex\">\n" +
+                        "                      <img style=\"height: 100px;width: 100px\" src=" + data[i].product.img + " alt=\"\" />\n" +
+                        "                    </div>\n" +
+                        "                    <div class=\"media-body\">\n" +
+                        "                      <p>" + data[i].product.ten + "</p>\n" +
+                        "                    </div>\n" +
+                        "                  </div>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <h5>" + data[i].product.gia + "</h5>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <div class=\"product_count\">\n" +
+                        "                    <button style=\"border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px\" id=giam" + data[i].product.id + " class=\"input-number-decrement\" onclick='giam(" + data[i].product.id + ")'> <i class=\"ti-angle-down\"></i></button>\n" +
+                        "                    <input id=soluong" + data[i].product.id + " class=\"input-number\" disabled type=\"text\" value=" + data[i].soluong + " min=\"0\" >\n" +
+                        "                    <span style=\"padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ;top: 0px\" id=tang" + data[i].product.id + " class=\"input-number-increment\" onclick='them(" + data[i].product.id + ")'> <i class=\"ti-angle-up\"></i></span>\n" +
+                        "                  </div>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <h5>" + data[i].product.gia * data[i].soluong + "</h5>\n" +
+                        "                </td></tr>";
+                    tongtien += data[i].product.gia * data[i].soluong;
+                }
+                document.getElementById('san-pham').innerHTML = result;
+                document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
+                document.getElementById('soluong').innerHTML = data.length;
+                document.getElementById('myCartTotal').value = tongtien*0.000044;
+            }
+        })
+    }
+
+    function xoa(id) {
+        var url = "http://localhost:8080/delete?id=" + id;
+        var result = "";
+        var tongtien = 0;
+        $.ajax({
+            url: url,
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    result += " <tr><td>\n" +
+                        "                  <div class=\"media\">\n" +
+                        "                    <div class=\"d-flex\">\n" +
+                        "                      <img style=\"height: 100px;width: 100px\" src=" + data[i].product.img + " alt=\"\" />\n" +
+                        "                    </div>\n" +
+                        "                    <div class=\"media-body\">\n" +
+                        "                      <p>" + data[i].product.ten + "</p>\n" +
+                        "                    </div>\n" +
+                        "                  </div>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <h5>" + data[i].product.gia + "</h5>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <div class=\"product_count\">\n" +
+                        "                    <button style=\"border: none;border-left:1px solid #dddddd ;padding: 0px 7px 0px 7px;bottom: -4px\" id=giam" + data[i].product.id + " class=\"input-number-decrement\" onclick='giam(" + data[i].product.id + ")'> <i class=\"ti-angle-down\"></i></button>\n" +
+                        "                    <input id=soluong" + data[i].product.id + " class=\"input-number\" disabled type=\"text\" value=" + data[i].soluong + " min=\"0\" >\n" +
+                        "                    <span style=\"padding: 0px 7px 0px 7px;border-bottom:1px solid #dddddd ;top: 0px\" id=tang" + data[i].product.id + " class=\"input-number-increment\" onclick='them(" + data[i].product.id + ")'> <i class=\"ti-angle-up\"></i></span>\n" +
+                        "                  </div>\n" +
+                        "                </td>\n" +
+                        "                <td>\n" +
+                        "                  <h5>" + data[i].product.gia * data[i].soluong + "</h5>\n" +
+                        "                </td></tr>";
+                    tongtien += data[i].product.gia * data[i].soluong;
+                }
+                document.getElementById('san-pham').innerHTML = result;
+                document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
+                document.getElementById('soluong').innerHTML = data.length;
+                document.getElementById('myCartTotal').value = tongtien*0.000044;
+            }
+        })
+    }
 </script>
 </body>
 

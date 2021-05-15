@@ -49,8 +49,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
-                            <h3>Welcome Back ! <br>
-                                Please Sign in now</h3>
+                            <h3>Chào mừng trở lại ! <br>
+                                Đăng nhập ngay bây giờ</h3>
                             <form class="row contact_form" th:action="@{/login}" method="post" novalidate="novalidate">
 
                                 <div class="col-md-12 form-group p_star">
@@ -70,7 +70,7 @@
                                     <button type="submit" value="submit" class="btn_3">
                                         log in
                                     </button>
-                                    <a class="lost_pass" href="#">forget password?</a>
+                                    <a class="lost_pass" th:href="@{/quenmatkhau}">forget password?</a>
                                 </div>
                             </form>
                         </div>

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import sources.entity.QuenMatKhau;
+import sources.entity.Role;
 import sources.entity.User;
 import sources.model.SendMail;
 import sources.service.ProductService;
@@ -35,9 +36,11 @@ public class UserController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String dangNhap(Model model, @RequestParam(value = "email") String email, @RequestParam(value = "pass") String pass, HttpSession session){
        User user= userService.checkLogin(email,pass);
-        if(user!=null&&user.getActive()==1){
+        if(user!=null&&user.getActive()==1&&user.getLevel().getId()==1){
             session.setAttribute("user",userService.checkLogin(email,pass));
             return "redirect:/";
+        }else if (user!=null&&user.getActive()==1&&user.getLevel().getId()==2){
+            return "redirect:/admin";
         }else if (user==null){
             model.addAttribute("error","Email hoặc password không đúng");
             return "login";
@@ -59,6 +62,7 @@ public class UserController {
             return "register";
         int code = (int) Math.floor(((Math.random() * 899999) + 10000000));
         user.setActive(code);
+        user.setLevel(new Role(1,"user"));
         String subject = "Xác minh địa chỉ email của bạn";
         String content = "Xác minh địa chỉ email của bạn\n" +
                 "Để hoàn tất việc thiết lập tài khoản, chúng tôi chỉ cần đảm bảo rằng địa chỉ email này là của bạn.\n" +
@@ -131,6 +135,9 @@ public class UserController {
                 User user =userService.findByEmail(quenMatKhau.getEmail());
                 user.setPass(pass);
                 userService.save(user);
+                quenMatKhau.setOtp(0);
+                quenMatKhau.setNgaytao(null);
+                userService.deleteQuenPass(quenMatKhau);
                 return "redirect:/";
             }else {
                 model.addAttribute("errorotp","mã otp đã hết hạn");

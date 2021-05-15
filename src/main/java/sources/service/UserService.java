@@ -44,4 +44,7 @@ public QuenMatKhau findByEmailAndOtp(String email, int otp){
 public QuenMatKhau checkotp(QuenMatKhau quenMatKhau){
         return quenMatKhauDAO.checkOtp(quenMatKhau.getEmail(),quenMatKhau.getOtp());
 }
+public void deleteQuenPass(QuenMatKhau quenMatKhau){
+        quenMatKhauDAO.save(quenMatKhau);
+}
 }

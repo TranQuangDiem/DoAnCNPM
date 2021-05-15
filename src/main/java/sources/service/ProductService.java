@@ -17,6 +17,9 @@ import java.util.Optional;
 public class ProductService {
     @Autowired
     ProductDAO productDAO;
+    public Product findId(long id){
+        return productDAO.findId(id);
+    }
     public Optional<Product> findById(long id){
         return productDAO.findById(id);
     }
