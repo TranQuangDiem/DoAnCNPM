@@ -8,8 +8,25 @@
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +53,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -58,19 +76,27 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+>>>>>>> diem
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\DoAnCNPM\src\main\resources\static\fonts" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DoAnCNPM\src\main\resources\static\assets\vendors\choices.js" />
       <recent name="D:\DoAnCNPM\src\main\resources\templates" />
-      <recent name="D:\DoAnCNPM\src\main\resources\static\css" />
-      <recent name="D:\DoAnCNPM\src\main\java\sources" />
-      <recent name="D:\DoAnCNPM\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DoAnCNPM\src\main\resources\templates" />
+      <recent name="D:\DoAnCNPM\src\main\resources\static\assets\css" />
+      <recent name="D:\DoAnCNPM\src\main\resources\static.assets" />
+      <recent name="D:\DoAnCNPM\src\main\resources\templates\admin" />
+      <recent name="D:\DoAnCNPM\src\main\resources\static\fonts" />
     </key>
   </component>
   <component name="RunManager">
@@ -129,6 +155,15 @@
 =======
       <workItem from="1620455253867" duration="603000" />
       <workItem from="1620483064697" duration="1307000" />
+<<<<<<< HEAD
+>>>>>>> diem
+=======
+      <workItem from="1620486118784" duration="1313000" />
+      <workItem from="1620959258256" duration="305000" />
+      <workItem from="1620967848479" duration="7824000" />
+      <workItem from="1620988756540" duration="10262000" />
+      <workItem from="1621005102490" duration="3165000" />
+      <workItem from="1621055364500" duration="2584000" />
 >>>>>>> diem
     </task>
     <servers />
