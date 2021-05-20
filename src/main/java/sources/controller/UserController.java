@@ -131,8 +131,12 @@ public class UserController {
     public String doimatkhau(@ModelAttribute("QuenMatKhau") QuenMatKhau quenMatKhau,@RequestParam("pass") String pass,Model model){
         if(userService.findByEmailAndOtp(quenMatKhau.getEmail(),quenMatKhau.getOtp())!=null){
             QuenMatKhau quenMatKhau1=userService.findByEmailAndOtp(quenMatKhau.getEmail(),quenMatKhau.getOtp());
+            User user =userService.findByEmail(quenMatKhau.getEmail());
+            if(pass.equals(user.getPass())){
+                model.addAttribute("error","Password đã được sử dụng");
+                return "doimatkhau";
+            }
             if (userService.checkotp(quenMatKhau1)!=null){
-                User user =userService.findByEmail(quenMatKhau.getEmail());
                 user.setPass(pass);
                 userService.save(user);
                 quenMatKhau.setOtp(0);
@@ -147,6 +151,10 @@ public class UserController {
             model.addAttribute("error","email hoặc mã otp không đúng");
             return "doimatkhau";
         }
+    }
+    @GetMapping("/checkout")
+    public String checkout(){
+        return "checkout";
     }
     @GetMapping("/logout")
     public String logout (HttpSession session){

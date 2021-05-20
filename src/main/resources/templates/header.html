@@ -129,11 +129,11 @@
                 for (var i =0 ; i < data.length ; i++){
                     result+=' <tr>\n' +
                         '                       <th>\n' +
-                        '                           <a href="#">\n' +
+                        '                           <a href="/chitietsanpham?id='+data[i].id+'">\n' +
                         '                               <img style="height: 80px;width: 80px" src="'+data[i].img+'" alt="">\n' +
                         '                           </a>\n' +
                         '                       </th>\n' +
-                        '                       <th style="padding: 4% 0px 0px 0px;"><a href="#">'+data[i].ten+'</a></th>\n' +
+                        '                       <th style="padding: 4% 0px 0px 0px;"><a href="/chitietsanpham?id='+data[i].id+'">'+data[i].ten+'</a></th>\n' +
                         '                       <th style="padding: 4% 0px 0px 0px;">'+data[i].gia+'</th>\n' +
                         '                    </tr>';
                 }
