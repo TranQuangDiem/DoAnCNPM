@@ -9,24 +9,28 @@
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/ChiTietDonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/ChiTietDonHangDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/QuenMatKhau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/DonHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/DonHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/ChiTietDonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/ChiTietDonHangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/QuenMatKhau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/DonHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/DonHang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin-index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +57,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -164,6 +168,16 @@
       <workItem from="1620988756540" duration="10262000" />
       <workItem from="1621005102490" duration="3165000" />
       <workItem from="1621055364500" duration="2584000" />
+<<<<<<< HEAD
+>>>>>>> diem
+=======
+      <workItem from="1621068876980" duration="12770000" />
+      <workItem from="1621083613644" duration="128000" />
+      <workItem from="1621084105818" duration="3844000" />
+      <workItem from="1621178962567" duration="1174000" />
+      <workItem from="1621254315624" duration="543000" />
+      <workItem from="1621258435168" duration="836000" />
+      <workItem from="1621485551654" duration="8032000" />
 >>>>>>> diem
     </task>
     <servers />

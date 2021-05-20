@@ -20,4 +20,6 @@ public class DonHang {
     private Date date;
     private double price;
     private String tinhtrang;
+    private String ghichu;
+    private String loaithanhtoan;
 }
