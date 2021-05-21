@@ -25,8 +25,8 @@ public class UserController {
     SendMail sendMail;
     @GetMapping("/")
     public String home(Model model){
-        model.addAttribute("product",productService.findAllLimit(true,4));
-        model.addAttribute("productSale",productService.findBySaleLimit(true,4));
+        model.addAttribute("product",productService.findAllLimit(true,8));
+        model.addAttribute("productSale",productService.findBySaleLimit(true,7));
         return "index";
     }
     @GetMapping("/login")

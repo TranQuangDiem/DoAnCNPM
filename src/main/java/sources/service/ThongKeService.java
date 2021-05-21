@@ -10,6 +10,7 @@ import sources.entity.ChiTietDonHang;
 import sources.entity.DonHang;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,6 +75,34 @@ public class ThongKeService {
             }
             result.put(loai,sum);
         }
+        }
+        return result;
+    }
+    private List<Integer> danhsachthang (){
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i =1 ; i <=12;i++){
+            list.add(i);
+        }
+        return list;
+    }
+    public Map<String,Double> doanhthuthangtheonam(int year) {
+        List<Integer> thangs = danhsachthang();
+        Map<String,Double> result = new LinkedHashMap<>();
+        for (int month : thangs) {
+            List<DonHang> donHangs = donHangDAO.findAll();
+//            if (donHangs != null) {
+                double sum = 0;
+                for (DonHang c : donHangs) {
+                    String date = "" + c.getDate();
+                    String[] list = date.split("-");
+                    int thang = Integer.parseInt(list[1]);
+                    int nam = Integer.parseInt(list[0]);
+                    if (month==thang&&year == nam) {
+                        sum += c.getPrice();
+                    }
+//                }
+                result.put("Tháng"+month,sum/1000000);
+            }
         }
         return result;
     }
