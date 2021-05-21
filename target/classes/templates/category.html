@@ -301,7 +301,7 @@
     // var id=document.getElementById('idproduct').value;
     function addItem(id) {
         $.ajax({
-            url: "http://localhost:8080/them?id=" + id,
+            url: "/them?id=" + id,
             header: {
                 Accept: "application/json; charset=utf-8", "content-Type": "application/json; charset=utf-8"
             },
@@ -326,7 +326,7 @@
         var search = getUrlParameter('search');
         var page = getUrlParameter('page');
         var mausac = getUrlParameter('mausac');
-        var url = "http://localhost:8080/danhsachsanpham1?sort=" + value;
+        var url = "/danhsachsanpham1?sort=" + value;
         if (loai.length > 0) {
             url += "&loai=" + loai;
         }
@@ -370,7 +370,7 @@
         var search = getUrlParameter('search');
         var page = getUrlParameter('page');
         var mausac = getUrlParameter('mausac');
-        var url = "http://localhost:8080/danhsachsanpham1?size=" + value+"&sort=ten";
+        var url = "/danhsachsanpham1?size=" + value+"&sort=ten";
         if (loai.length > 0) {
             url += "&loai=" + loai;
         }

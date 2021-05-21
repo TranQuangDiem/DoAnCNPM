@@ -47,22 +47,25 @@
                     <h3>Chi tiết thanh toán</h3>
                     <div class="row contact_form" novalidate="novalidate">
                         <div class="col-md-12 form-group p_star">
-                            <input type="text" class="form-control" id="first" name="name" th:value="${session.user.getUsername()}"/>
+                            <span style="color: red" id="errorusername"></span>
+                            <input type="text" class="form-control" id="username" name="name" th:value="${session.user.getUsername()}"/>
 <!--                            <span class="placeholder" data-placeholder="Họ và tên"></span>-->
                         </div>
 
                         <div class="col-md-6 form-group p_star">
-                            <input type="number" class="form-control" id="number" name="phone" th:value="${session.user.getPhone()}"/>
+                            <span style="color: red" id="errorphone"></span>
+                            <input type="number" onkeyup="checkSdt()" class="form-control" id="phone" name="phone" th:value="${session.user.getPhone()}"/>
 <!--                            <span class="placeholder" data-placeholder="Số điện thoại"></span>-->
                         </div>
                         <div class="col-md-6 form-group p_star">
-                            <input type="text" class="form-control" id="email" name="email" th:value="${session.user.getEmail()}"/>
+                            <input type="text" disabled class="form-control" id="email" name="email" th:value="${session.user.getEmail()}"/>
 <!--                            <span class="placeholder" data-placeholder="Địa chỉ email"></span>-->
                         </div>
 
 
                         <div class="col-md-12 form-group p_star">
-                            <input type="text" class="form-control" id="city" name="address" th:value="${session.user.getAddress()}"/>
+                            <span style="color: red" id="erroraddress"></span>
+                            <input type="text" class="form-control" id="address" name="address" th:value="${session.user.getAddress()}"/>
 <!--                            <span class="placeholder" data-placeholder="Địa chi"></span>-->
                         </div>
                         <!--            <div class="col-md-12 form-group p_star">-->
@@ -132,7 +135,7 @@
                             <label for="f-option4">Tôi đã đọc và chấp nhận </label>
                             <a href="#">Điều khoản và điều kiện*</a>
                         </div>
-                        <button style="width: 100%" type="submit" class="btn_3" >Thanh toán</button>
+                        <button onclick="return validate()" style="width: 100%" type="submit" class="btn_3" >Thanh toán</button>
                     </div>
                 </div>
                 </form>
@@ -175,7 +178,78 @@
 <script src="js/price_rangs.js"></script>
 <!-- custom js -->
 <script src="js/custom.js"></script>
-<script></script>
+<script>
+    var flag = true;
+
+    // Lấy giá trị của một input
+    function getValue(id) {
+        return document.getElementById(id).value.trim();
+    }
+
+    // Hiển thị lỗi
+    function showError(key, mess) {
+        document.getElementById('error'+key).innerHTML = mess;
+    }
+
+    function checkName() {
+        var name = getValue('username');
+        if (name == '') {
+            flag = false;
+            showError('username', 'tên không được để trống');
+        } else if (name.length < 4) {
+            flag = false;
+            showError('username', 'tên phải ít nhất 4 ký tự');
+        }else {
+            showError('username', '');
+        }
+    }
+    function checkemail() {
+        var mailformat = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        var email = getValue('email');
+        // var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email == "") {
+            flag = false;
+            showError('email', 'Email không được bỏ trống')
+        }else if (!email.match(mailformat)) {
+            flag = false;
+            showError('email', 'email không hợp lệ vd(abc@gmail.com)');
+        }else {
+            showError('email', '');
+        }
+    }
+
+    function checkSdt() {
+        var phone = getValue('phone');
+        if (phone == ''||phone.length!=10) {
+            flag = false;
+            showError('phone', 'số điện thoại nhập không đúng');
+        }else {
+            showError('phone', '');
+        }
+    }
+
+    function checkAddress() {
+        var address = getValue('address');
+        if (address == '') {
+            flag = false;
+            showError('address', 'địa chỉ không được bỏ trống');
+        }else {
+            showError('address', '');
+        }
+    }
+
+    function validate() {
+        flag=true;
+        // 1 username
+        checkName();
+        // 4. Email
+        // checkemail();
+        checkSdt();
+        checkAddress();
+
+        return flag;
+    }
+</script>
 </body>
 
 </html>

@@ -124,7 +124,7 @@
         var search = document.getElementById("search_input").value.trim();
         var result="";
         $.ajax({
-            url: "http://localhost:8080/search?name="+search,
+            url: "/search?name="+search,
             success: function (data) {
                 for (var i =0 ; i < data.length ; i++){
                     result+=' <tr>\n' +

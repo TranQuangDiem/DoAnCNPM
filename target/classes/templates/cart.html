@@ -157,7 +157,7 @@
         // } else {
         //   document.getElementById(b).disabled = false;
         //   document.getElementById(b).style.cursor = "pointer";
-        var url = "http://localhost:8080/add?id=" + id;
+        var url = "/add?id=" + id;
         var result = "";
         var tongtien = 0;
         $.ajax({
@@ -193,14 +193,13 @@
                 document.getElementById('san-pham').innerHTML = result;
                 document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
                 document.getElementById('soluong').innerHTML = data.length;
-                document.getElementById('myCartTotal').value = tongtien*0.000044;
             }
         })
         // }
     }
 
     function giam(id) {
-        var url = "http://localhost:8080/giam?id=" + id;
+        var url = "/giam?id=" + id;
         var result = "";
         var tongtien = 0;
         $.ajax({
@@ -236,13 +235,12 @@
                 document.getElementById('san-pham').innerHTML = result;
                 document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
                 document.getElementById('soluong').innerHTML = data.length;
-                document.getElementById('myCartTotal').value = tongtien*0.000044;
             }
         })
     }
 
     function xoa(id) {
-        var url = "http://localhost:8080/delete?id=" + id;
+        var url = "/delete?id=" + id;
         var result = "";
         var tongtien = 0;
         $.ajax({
@@ -278,7 +276,6 @@
                 document.getElementById('san-pham').innerHTML = result;
                 document.getElementById('tong_tien').innerHTML = "" + tongtien + " VNĐ";
                 document.getElementById('soluong').innerHTML = data.length;
-                document.getElementById('myCartTotal').value = tongtien*0.000044;
             }
         })
     }
