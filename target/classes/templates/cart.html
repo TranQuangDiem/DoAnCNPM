@@ -45,6 +45,7 @@
                         <th scope="col">Giá</th>
                         <th scope="col">Số lượng</th>
                         <th scope="col">Tổng giá trị</th>
+                        <th scope="col">Tác vụ</th>
                     </tr>
                     </thead>
                     <tbody id="san-pham">
@@ -84,6 +85,7 @@
                         <td>
                             <h5 th:text="${cartItem.getValue().getProduct().get().getGia()*cartItem.getValue().getSoluong()}+'VNĐ'"></h5>
                         </td>
+                        <td><button th:onclick="'xoa('+${cartItem.getValue().getProduct().get().getId()}+')'">Xóa</button></td>
                     </tr>
                     </tbody>
                     <tr>
@@ -184,6 +186,7 @@
                         "                </td>\n" +
                         "                <td>\n" +
                         "                  <h5>" + data[i].product.gia * data[i].soluong + "VNĐ</h5>\n" +
+                            "<td><button onclick=\"xoa("+data[i].product.id+")\">Xóa</button></td>"+
                         "                </td></tr>";
                     tongtien += data[i].product.gia * data[i].soluong;
                 }
@@ -226,6 +229,7 @@
                         "                </td>\n" +
                         "                <td>\n" +
                         "                  <h5>" + data[i].product.gia * data[i].soluong + "VNĐ</h5>\n" +
+                        "<td><button onclick=\"xoa("+data[i].product.id+")\">Xóa</button></td>"+
                         "                </td></tr>";
                     tongtien += data[i].product.gia * data[i].soluong;
                 }
@@ -267,6 +271,7 @@
                         "                </td>\n" +
                         "                <td>\n" +
                         "                  <h5>" + data[i].product.gia * data[i].soluong + "VNĐ</h5>\n" +
+                        "<td><button onclick=\"xoa("+data[i].product.id+")\">Xóa</button></td>"+
                         "                </td></tr>";
                     tongtien += data[i].product.gia * data[i].soluong;
                 }
