@@ -445,7 +445,7 @@
   var id=document.getElementById('idproduct').value;
   function addItem() {
     $.ajax({
-      url: "http://localhost:8080/them?id=" +id,
+      url: "/them?id=" +id,
       header:{
         Accept:"application/json; charset=utf-8","content-Type":"application/json; charset=utf-8"
       },

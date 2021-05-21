@@ -78,13 +78,13 @@
 
                             <div class="col-md-12 form-group p_star">
                                 <span style="color: red" id="errorphone"></span>
-                                <input type="number" required class="form-control" id="phone" name="phone" value="0"
+                                <input type="number" onkeyup="checkSdt()" required class="form-control" id="phone" name="phone" value="0"
                                        placeholder="Số điện thoại">
                             </div>
 
                             <div class="col-md-12 form-group p_star">
-                                <span style="color: red"></span>
-                                <input type="text" required class="form-control" id="address" name="address" value=""
+                                <span style="color: red" id="erroraddress"></span>
+                                <input type="text" onkeyup="checkAddress()" required class="form-control" id="address" name="address" value=""
                                        placeholder="Địa chỉ">
                             </div>
                             <div class="col-md-12 form-group">
@@ -172,7 +172,7 @@
 
     function validMail() {
         var empId = document.getElementById('email').value;
-        var url = "http://localhost:8080/kiemtramail?email=" + empId;
+        var url = "/kiemtramail?email=" + empId;
 
         if (window.XMLHttpRequest) {
             request = new XMLHttpRequest();
@@ -282,6 +282,8 @@
         // checkSdt()
         // 4. Email
         checkemail();
+        checkSdt();
+        checkAddress();
 
         return flag;
     }

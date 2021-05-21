@@ -262,11 +262,11 @@
 <script src="js/custom.js"></script>
     <!-- jquery plugins here-->
 
-  <script>
+  <script th:scr>
       // var id=document.getElementById('idproduct').value;
       function addItem(id) {
           $.ajax({
-              url: "http://localhost:8080/them?id=" +id,
+              url: "/them?id=" +id,
               header:{
                   Accept:"application/json; charset=utf-8","content-Type":"application/json; charset=utf-8"
               },
