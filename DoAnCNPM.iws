@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quenmatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quenmatkhau.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/quenmatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/quenmatkhau.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/single-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/DonHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/DonHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pieChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pieChart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/DonHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/DonHang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pieChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pieChart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/trangchu.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +47,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -165,7 +164,8 @@
       <workItem from="1621501699807" duration="825000" />
       <workItem from="1621505667470" duration="4542000" />
       <workItem from="1621515364659" duration="2819000" />
-      <workItem from="1621581239126" duration="5751000" />
+      <workItem from="1621581239126" duration="14183000" />
+      <workItem from="1621739800184" duration="11301000" />
     </task>
     <servers />
   </component>

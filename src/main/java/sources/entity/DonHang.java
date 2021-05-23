@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
+
 @Entity
 @Table(name="donhang")
 @Data
@@ -16,10 +17,12 @@ public class DonHang {
     private User idUser;
     private String name;
     private String address;
-    private int phone;
+    private String phone;
     private Date date;
     private double price;
     private String tinhtrang;
     private String ghichu;
     private String loaithanhtoan;
+    private int month;
+    private int year;
 }
