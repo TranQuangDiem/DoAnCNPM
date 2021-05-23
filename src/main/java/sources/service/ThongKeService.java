@@ -27,6 +27,12 @@ public class ThongKeService {
     @Autowired
     ChiTietDonHangDAO chiTietDonHangDAO;
 
+    public List<String> getByYear(){
+        return donHangDAO.getByYear();
+    }
+    public List<String> getMonthByYear(int year){
+        return donHangDAO.getMonthByYear(year);
+    }
     public long tongDoanhThu() {
         long result = 0;
         List<DonHang> donHangs = donHangDAO.findAll();
@@ -57,9 +63,10 @@ public class ThongKeService {
         return result;
     }
 
-    public Map<String,Integer> soLuongBanTheoLoai(int month, int year) {
+    public ArrayList<ArrayList> soLuongBanTheoLoai(int month, int year) {
         List<String> loai1 = productDAO.getByLoai();
-        Map<String,Integer> result = new LinkedHashMap<>();
+        ArrayList<ArrayList> result = new ArrayList<>();
+        ArrayList result1 = new ArrayList<>();
         for (String loai : loai1) {
         List<ChiTietDonHang> chiTietDonHangs = chiTietDonHangDAO.findByMasanpham_Loai(loai);
         if (chiTietDonHangs != null) {
@@ -73,8 +80,11 @@ public class ThongKeService {
                     sum += c.getSoluong();
                 }
             }
-            result.put(loai,sum);
+            result1.add(loai);
+            result1.add(sum);
         }
+        result.add(result1);
+        result1 = new ArrayList<>();
         }
         return result;
     }
@@ -86,10 +96,10 @@ public class ThongKeService {
         return list;
     }
     public Map<String,Double> doanhthuthangtheonam(int year) {
-        List<Integer> thangs = danhsachthang();
-        Map<String,Double> result = new LinkedHashMap<>();
-        for (int month : thangs) {
-            List<DonHang> donHangs = donHangDAO.findAll();
+            List<Integer> thangs = danhsachthang();
+            Map<String,Double> result = new LinkedHashMap<>();
+            for (int month : thangs) {
+                List<DonHang> donHangs = donHangDAO.findAll();
 //            if (donHangs != null) {
                 double sum = 0;
                 for (DonHang c : donHangs) {
@@ -100,11 +110,36 @@ public class ThongKeService {
                     if (month==thang&&year == nam) {
                         sum += c.getPrice();
                     }
+                }
+                    result.put("Tháng"+month,sum/1000000);
 //                }
-                result.put("Tháng"+month,sum/1000000);
             }
-        }
-        return result;
+            return result;
     }
-
+    public ArrayList<ArrayList> doanhthutheonam(int year) {
+        List<Integer> thangs = danhsachthang();
+        ArrayList<Double> result = new  ArrayList<>();
+        ArrayList<ArrayList> result2 = new  ArrayList<>();
+        ArrayList<String> result1 = new  ArrayList<>();
+        for (int month : thangs) {
+            List<DonHang> donHangs = donHangDAO.findAll();
+//            if (donHangs != null) {
+            double sum = 0;
+            for (DonHang c : donHangs) {
+                String date = "" + c.getDate();
+                String[] list = date.split("-");
+                int thang = Integer.parseInt(list[1]);
+                int nam = Integer.parseInt(list[0]);
+                if (month==thang&&year == nam) {
+                    sum += c.getPrice();
+                }
+//                }
+            }
+            result.add(sum/1000000);
+            result1.add("tháng "+month);
+        }
+        result2.add(result1);
+        result2.add(result);
+        return result2;
+    }
 }

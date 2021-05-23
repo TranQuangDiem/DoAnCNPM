@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.paypal.api.payments.Links;
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
-import sources.entity.ChiTietDonHang;
-import sources.entity.DonHang;
-import sources.entity.Product;
-import sources.entity.User;
+import sources.entity.*;
 import sources.model.Cart;
 import sources.service.ChiTietDonHangService;
 import sources.service.DonHangService;
@@ -78,6 +75,10 @@ public class PaymentController {
             }
             long millis = System.currentTimeMillis();
             java.sql.Date date = new java.sql.Date(millis);
+            String ngay = ""+date;
+            String[] listdate = ngay.split("-");
+            donHang.setMonth(Integer.parseInt(listdate[1]));
+            donHang.setYear(Integer.parseInt(listdate[0]));
             donHang.setDate(date);
             donHang.setTinhtrang("Đang xử lý");
             donHang.setIdUser(a);
@@ -118,9 +119,16 @@ public class PaymentController {
                     }
                     long millis = System.currentTimeMillis();
                     java.sql.Date date = new java.sql.Date(millis);
-                    donHang.setDate(date);
+                String ngay = ""+date;
+                String[] listdate = ngay.split("-");
+                donHang.setMonth(Integer.parseInt(listdate[1]));
+                donHang.setYear(Integer.parseInt(listdate[0]));
+                donHang.setDate(date);
                 donHang.setTinhtrang("Đang xử lý");
                 donHang.setIdUser(a);
+                donHang.setName(a.getUsername());
+                donHang.setPhone(a.getPhone());
+                donHang.setAddress(a.getAddress());
                 donHang.setLoaithanhtoan("đã thanh toán qua paypal");
                 donHang.setPrice(totalPrice(cartItems) + (totalPrice(cartItems) * 0.1));
                 donHangService.save(donHang);

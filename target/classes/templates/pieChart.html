@@ -4,6 +4,7 @@
 <body>
 	<div id="container1" style="height: 400px"></div>
 	<script th:inline="javascript">
+
 		Highcharts.chart('container1', {
 			chart : {
 				type : 'pie',
@@ -14,7 +15,7 @@
 				}
 			},
 			title : {
-				text : 'Result Status'
+				text : 'Tỉ lệ các loại sản phẩm đã bán trong tháng này'
 			},
 			tooltip : {
 				pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -37,7 +38,7 @@
 			series : [ {
 				type : 'pie',
 				name : 'Ratio',
-				data : [[${surveyMap.values()}]]
+				data : [[${soluongban}]]
 			} ]
 		});
 	</script>
