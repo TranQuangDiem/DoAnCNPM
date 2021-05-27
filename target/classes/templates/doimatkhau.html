@@ -51,32 +51,31 @@
                     <div class="login_part_form_iner">
                         <h3>Welcome Back ! <br>
                             Change password?</h3>
-                        <form class="row contact_form" th:action="@{/doimatkhau}" modelAttribute="QuenMatKhau" method="post" novalidate="novalidate">
+                        <form class="row contact_form" th:action="@{/doimatkhau}" method="post" modelAttribute="QuenMatKhau">
 
                             <div class="col-md-12 form-group p_star">
-                                <span style="color: red" th:text="${error}"></span>
-                                <input type="email" required class="form-control" id="email" name="email" value=""
+                                <span id="erroremail" style="color: red" th:text="${error}"></span>
+                                <input type="email" onkeyup="checkemail()" required class="form-control" id="email" name="email" value=""
                                        placeholder="Email">
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <span style="color: red" ></span>
-                                <input type="password" required class="form-control" id="password" name="pass" value=""
+                                <span id="errorpassword" style="color: red"></span>
+                                <input type="password" onkeyup="checkPass()" required class="form-control" id="password" name="pass" value=""
                                        placeholder="Mật khẩu">
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <span style="color: red"></span>
-                                <input type="password" required class="form-control" id="repassword"  value=""
+                                <span id="errorrepassword" style="color: red"></span>
+                                <input type="password" onkeyup="checkRepass()" required class="form-control" id="repassword" value=""
                                        placeholder="Nhập lại mật khẩu">
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <span style="color: red" th:text="${errorotp}"></span>
-                                <input type="text" required class="form-control" id="otp" name="otp" value=""
+                                <span id="errorotp" style="color: red" th:text="${errorotp}"></span>
+                                <input onkeyup="checkotp()" type="text" required class="form-control" id="otp"
+                                       name="otp" value=""
                                        placeholder="nhập mã opt">
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn_3">
-                                    Đổi mật khẩu
-                                </button>
+                                <input type="submit" value=" Đổi mật khẩu" onclick="return validate()" class="btn_3"/>
                             </div>
                         </form>
                     </div>
@@ -116,6 +115,81 @@
 <script th:src="@{js/mail-script.js}"></script>
 <!-- custom js -->
 <script th:src="@{js/custom.js}"></script>
+<script>
+    var flag = true;
+
+    // Lấy giá trị của một input
+    function getValue(id) {
+        return document.getElementById(id).value.trim();
+    }
+
+    // Hiển thị lỗi
+    function showError(key, mess) {
+        document.getElementById('error' + key).innerHTML = mess;
+    }
+
+    function checkemail() {
+        var mailformat = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        var email = getValue('email');
+        // var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email == "") {
+            flag = false;
+            showError('email', 'Email không được bỏ trống')
+        } else if (!email.match(mailformat)) {
+            flag = false;
+            showError('email', 'email không hợp lệ vd(abc@gmail.com)');
+        } else {
+            showError('email', '');
+        }
+    }
+
+    function checkotp() {
+        var otp = getValue("otp");
+        if (otp == '') {
+            flag = false;
+            showError('otp', 'mã xác thực không được để trống');
+        } else {
+            showError('otp', '');
+        }
+    }
+
+    function checkPass() {
+        var password = getValue('password');
+        var regexPass = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+        if (password == '') {
+            flag = false;
+            showError('password', 'mật khẩu không được để trống');
+        } else if (!password.match(regexPass)) {
+            flag = false;
+            showError('password', 'mật khẩu phải hơn 8 kí tự, có ít nhật 1 ký tự thường,hoa,số,ký tự đặc biệt');
+        } else {
+            showError('password', '');
+        }
+    }
+
+    function checkRepass() {
+        var repassword = getValue('repassword');
+        var password = getValue('password');
+        if (repassword == '') {
+            showError('repassword', 'mật khẩu không được bỏ trống');
+        } else if (repassword != password) {
+            flag = false;
+            showError('repassword', 'mật khẩu không trùng khớp');
+        } else {
+            showError('repassword', '');
+        }
+    }
+
+    function validate() {
+        flag = true;
+        // 2. password
+        checkemail()
+        checkPass()
+        checkRepass()
+        checkotp()
+        return flag;
+    }
+</script>
 </body>
 
 </html>
