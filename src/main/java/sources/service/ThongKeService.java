@@ -27,11 +27,19 @@ public class ThongKeService {
     @Autowired
     ChiTietDonHangDAO chiTietDonHangDAO;
 
-    public List<String> getByYear(){
+    public List<Integer> getByYear(){
         return donHangDAO.getByYear();
     }
-    public List<String> getMonthByYear(int year){
-        return donHangDAO.getMonthByYear(year);
+    public List<String> getMonthByYear(){
+        List<Integer> nams = donHangDAO.getByYear();
+        List<String> result= new ArrayList<>();
+        for (int nam: nams) {
+            List<Integer> thangs =donHangDAO.getMonthByYear(nam);
+            for (int thang:thangs) {
+                result.add(thang+"/"+nam);
+            }
+        }
+        return result;
     }
     public long tongDoanhThu() {
         long result = 0;
