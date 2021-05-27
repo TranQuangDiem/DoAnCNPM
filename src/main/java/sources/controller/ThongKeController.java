@@ -36,14 +36,21 @@ public class ThongKeController {
         return "ui-chart";
     }
 
-    @GetMapping("/doanhthu")
+    @GetMapping("/doanhthu/{nam}/{timtheo}")
     @ResponseBody
-    public ArrayList<ArrayList> doanhthu(@RequestParam("nam") int nam){
+    public ArrayList<ArrayList> doanhthu(@PathVariable("nam") int nam,@PathVariable("timtheo") String timtheo){
+        if (timtheo.equals("loai")){
+            return thongKeService.doanhthutheoloai(nam);
+        }
         return thongKeService.doanhthutheonam(nam);
     }
-    @GetMapping("/soluongban/{month}/{year}")
+    @GetMapping("/soluongban/{month}/{year}/{timtheo}")
     @ResponseBody
-    public ArrayList<ArrayList> soluongban(@PathVariable("month") int month,@PathVariable("year") int year){
+    public ArrayList<ArrayList> soluongban(@PathVariable("month") int month,@PathVariable("year") int year,@PathVariable("timtheo") String timtheo){
+        if (timtheo.equals("giatri")){
+            return thongKeService.doanhthuBanTheoLoai(month,year);
+        }
+
         return thongKeService.soLuongBanTheoLoai(month,year);
     }
 }
