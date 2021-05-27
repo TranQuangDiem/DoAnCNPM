@@ -44,12 +44,18 @@ public class ThongKeService {
     public long tongDoanhThu() {
         long result = 0;
         List<DonHang> donHangs = donHangDAO.findAll();
+        long millis = System.currentTimeMillis();
+        Date date = new Date(millis);
+        String ngay = "" + date;
+        String[] list = ngay.split("-");
         for (DonHang donhang : donHangs) {
-            result += donhang.getPrice();
+            if (donhang.getYear()==Integer.parseInt(list[0])) {
+                result += donhang.getPrice();
+            }
         }
         return result;
     }
-
+ 
     public long tongUser() {
         return userDAO.count();
     }

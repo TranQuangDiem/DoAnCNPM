@@ -22,12 +22,24 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     List<Product> findByLoaiOrderByGiaAsc(String loai);
     List<Product> findByMausacOrderByGiaAsc(String mausac);
     List<Product> findByMausacOrderByTenAsc(String mausac);
+    @Query(value = "select * from Product p where p.ten LIKE %:name% order by ten desc ",nativeQuery = true)
+    List<Product> findByTenLikeDesc(@Param("name") String name);
+    @Query(value = "select * from Product p where p.ten LIKE %:name% order by gia desc ",nativeQuery = true)
+    List<Product> findByTenLikeOrderByGiaDesc(@Param("name") String name);
+    List<Product> findByLoaiOrderByTenDesc(String loai);
+    List<Product> findByLoaiOrderByGiaDesc(String loai);
+    List<Product> findByMausacOrderByGiaDesc(String mausac);
+    List<Product> findByMausacOrderByTenDesc(String mausac);
     @Query(value = "select DISTINCT  loai from product",nativeQuery = true)
     List<String> getByLoai ();
     @Query(value = "select DISTINCT  mausac from product",nativeQuery = true)
     List<String> getByMausac ();
     @Query(value = "select * from product order by gia asc ",nativeQuery = true)
     List<Product> findAllOrderbyGia();
+    @Query(value = "select * from product order by gia desc ",nativeQuery = true)
+    List<Product> findAllOrderbyGiaDesc();
+    @Query(value = "select * from product order by ten desc ",nativeQuery = true)
+    List<Product> findAllOrderbyTenDesc();
     @Query(value = "select * from Product where id = :id",nativeQuery = true)
     Product findId(@Param("id") long id);
 }

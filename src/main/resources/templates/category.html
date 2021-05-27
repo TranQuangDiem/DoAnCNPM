@@ -141,10 +141,12 @@
                                 <p><span th:text="${sum}"> </span> Prodict Found</p>
                             </div>
                             <div class="single_product_menu d-flex">
-                                <h5>short by : </h5>
+                                <h5>Sắp xếp theo : </h5>
                                 <select onchange="sapxep(this)">
-                                    <option value="ten" data-display="name">name</option>
-                                    <option value="gia">price</option>
+                                    <option value="ten" data-display="name">A-Z</option>
+                                    <option value="tengiam" data-display="name">Z-A</option>
+                                    <option value="gia">Giá tăng dần</option>
+                                    <option value="giagiam">Giá giảm dần</option>
                                     <!--                                    <option value="2">product</option>-->
                                 </select>
                             </div>

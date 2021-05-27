@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/doimatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/doimatkhau.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quenmatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quenmatkhau.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/doimatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/doimatkhau.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/ProductDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/category.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,10 +182,14 @@
 =======
       <workItem from="1621739800184" duration="11865000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1622100198651" duration="2699000" />
 >>>>>>> diem
 =======
       <workItem from="1622100198651" duration="4875000" />
+>>>>>>> diem
+=======
+      <workItem from="1622100198651" duration="8685000" />
 >>>>>>> diem
     </task>
     <servers />

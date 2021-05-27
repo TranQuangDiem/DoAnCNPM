@@ -78,7 +78,19 @@ public class ProductService {
             products= productDAO.findByMausacOrderByTenAsc(mausac);
         }else if (mausac!=null&&sort.equals("gia")){
             products= productDAO.findByMausacOrderByGiaAsc(mausac);
-        }else if (loai!=null){
+        }else if (sort.equals("giagiam")&&loai!=null){
+            products= productDAO.findByLoaiOrderByGiaDesc(loai);
+        }else if (search!=null&&sort.equals("giagiam")){
+            products= productDAO.findByTenLikeOrderByGiaDesc(search);
+        }else if (sort.equals("tengiam")&&loai!=null){
+            products= productDAO.findByLoaiOrderByTenDesc(loai);
+        }else if (search!=null&&sort.equals("tengiam")){
+            products= productDAO.findByTenLikeDesc(search);
+        }else if (sort.equals("tengiam")&&mausac!=null){
+            products= productDAO.findByMausacOrderByTenDesc(mausac);
+        }else if (mausac!=null&&sort.equals("giagiam")){
+            products= productDAO.findByMausacOrderByGiaDesc(mausac);
+        }if (loai!=null){
             products = productDAO.findByLoaiOrderByTenAsc(loai);
         }else if (search!=null){
             products = productDAO.findByTenLike(search);
@@ -86,6 +98,10 @@ public class ProductService {
             products = productDAO.findByMausacOrderByTenAsc(mausac);
         }else if (sort.equals("gia")){
             products=productDAO.findAllOrderbyGia();
+        }else if (sort.equals("giagiam")){
+            products=productDAO.findAllOrderbyGiaDesc();
+        }else if (sort.equals("tengiam")){
+            products=productDAO.findAllOrderbyTenDesc();
         }
         return products;
     }
