@@ -11,8 +11,12 @@ import java.util.List;
 @Repository
 public interface DonHangDAO extends JpaRepository<DonHang,Long> {
 
-    @Query(value = "select DISTINCT  year from DonHang",nativeQuery = true)
-    List<String> getByYear();
-    @Query(value = "select DISTINCT  month from DonHang where year =:year",nativeQuery = true)
-    List<String> getMonthByYear(@Param("year") int year);
+//    @Query(value = "select DISTINCT  year from DonHang order by year desc ",nativeQuery = true)
+//    List<String> getByYear();
+//    @Query(value = "select DISTINCT  month from DonHang where year =:year order by month desc",nativeQuery = true)
+//    List<String> getMonthByYear(@Param("year") int year);
+    @Query(value = "select DISTINCT  year from DonHang order by year desc",nativeQuery = true)
+    List<Integer> getByYear();
+    @Query(value = "select DISTINCT  month from DonHang where year =:year order by month desc",nativeQuery = true)
+    List<Integer> getMonthByYear(@Param("year") int year);
 }

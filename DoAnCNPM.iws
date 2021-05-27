@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/DonHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/DonHang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pieChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pieChart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/DonHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/DonHang.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/pieChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pieChart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/trangchu.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -165,7 +158,8 @@
       <workItem from="1621505667470" duration="4542000" />
       <workItem from="1621515364659" duration="2819000" />
       <workItem from="1621581239126" duration="14183000" />
-      <workItem from="1621739800184" duration="11301000" />
+      <workItem from="1621739800184" duration="11865000" />
+      <workItem from="1622100198651" duration="2699000" />
     </task>
     <servers />
   </component>

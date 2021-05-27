@@ -357,7 +357,7 @@
     function soluongban(object) {
         var month = object.value;
         $.ajax({
-            url:"/soluongban?month="+month,
+            url:"/soluongban/"+month,
             success:function (data) {
                 pieChart(data,month)
             }
