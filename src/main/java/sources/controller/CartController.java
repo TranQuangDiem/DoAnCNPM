@@ -24,7 +24,7 @@ public class CartController {
     }
     @RequestMapping(value = "/them")
     @ResponseBody
-    public int them (HttpSession session, @RequestParam("id") long id) throws IOException {
+    public long them (HttpSession session, @RequestParam("id") long id) throws IOException {
         HashMap<Long, Cart> cartItems = (HashMap<Long, Cart>) session.getAttribute("myCartItems");
         Optional<Product> product = productService.findById(id);
         if (cartItems == null) {
@@ -46,8 +46,8 @@ public class CartController {
         }
         session.setAttribute("myCartItems", cartItems);
         session.setAttribute("myCartTotal", totalPrice(cartItems));
-        session.setAttribute("myCartNum", ""+cartItems.size());
-        return cartItems.size();
+        session.setAttribute("myCartNum", ""+myCartNum(cartItems));
+        return myCartNum(cartItems);
     }
     @RequestMapping(value = "/add")
     @ResponseBody
@@ -76,7 +76,7 @@ public class CartController {
         List<Cart> ls = new ArrayList<Cart>(values);
         session.setAttribute("myCartItems", cartItems);
         session.setAttribute("myCartTotal", totalPrice(cartItems));
-        session.setAttribute("myCartNum", ""+cartItems.size());
+        session.setAttribute("myCartNum", ""+myCartNum(cartItems));
         return ls;
     }
     @RequestMapping(value = "/giam")
@@ -107,7 +107,7 @@ public class CartController {
         List<Cart> ls = new ArrayList<Cart>(values);
         session.setAttribute("myCartItems", cartItems);
         session.setAttribute("myCartTotal", totalPrice(cartItems));
-        session.setAttribute("myCartNum", ""+cartItems.size());
+        session.setAttribute("myCartNum", ""+myCartNum(cartItems));
         return ls;
     }
     @RequestMapping(value = "/delete",params = {"id"})
@@ -124,13 +124,20 @@ public class CartController {
         List<Cart> ls = new ArrayList<Cart>(values);
         session.setAttribute("myCartItems", cartItems);
         session.setAttribute("myCartTotal", totalPrice(cartItems));
-        session.setAttribute("myCartNum", ""+cartItems.size());
+        session.setAttribute("myCartNum", ""+myCartNum(cartItems));
         return ls;
     }
     public long totalPrice(HashMap<Long, Cart> cartItems) {
         int count = 0;
         for (Map.Entry<Long, Cart> list : cartItems.entrySet()) {
             count += list.getValue().getProduct().get().getGia() * list.getValue().getSoluong();
+        }
+        return count;
+    }
+    public long myCartNum(HashMap<Long, Cart> cartItems) {
+        int count = 0;
+        for (Map.Entry<Long, Cart> list : cartItems.entrySet()) {
+            count +=list.getValue().getSoluong();
         }
         return count;
     }

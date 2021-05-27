@@ -102,6 +102,31 @@ public class ThongKeService {
         }
         return result;
     }
+    public ArrayList<ArrayList> doanhthuBanTheoLoai(int month, int year) {
+        List<String> loai1 = productDAO.getByLoai();
+        ArrayList<ArrayList> result = new ArrayList<>();
+        ArrayList result1 = new ArrayList<>();
+        for (String loai : loai1) {
+            List<ChiTietDonHang> chiTietDonHangs = chiTietDonHangDAO.findByMasanpham_Loai(loai);
+            if (chiTietDonHangs != null) {
+                int sum = 0;
+                for (ChiTietDonHang c : chiTietDonHangs) {
+                    String date = "" + c.getMahoadon().getDate();
+                    String[] list = date.split("-");
+                    int thang = Integer.parseInt(list[1]);
+                    int nam = Integer.parseInt(list[0]);
+                    if (thang == month && year == nam) {
+                        sum += (c.getSoluong()*c.getDongia());
+                    }
+                }
+                result1.add(loai);
+                result1.add(sum);
+            }
+            result.add(result1);
+            result1 = new ArrayList<>();
+        }
+        return result;
+    }
     private List<Integer> danhsachthang (){
         List<Integer> list = new ArrayList<Integer>();
         for (int i =1 ; i <=12;i++){
@@ -151,6 +176,27 @@ public class ThongKeService {
             }
             result.add(sum/1000000);
             result1.add("tháng "+month);
+        }
+        result2.add(result1);
+        result2.add(result);
+        return result2;
+    }
+    public ArrayList<ArrayList> doanhthutheoloai(int year) {
+        List<String> loais = productDAO.getByLoai();
+        ArrayList<Double> result = new  ArrayList<>();
+        ArrayList<ArrayList> result2 = new  ArrayList<>();
+        ArrayList<String> result1 = new  ArrayList<>();
+        for (String loai : loais) {
+            List<ChiTietDonHang> ctdonHangs = chiTietDonHangDAO.findAll();
+            double sum = 0;
+            for (ChiTietDonHang c : ctdonHangs) {
+                int nam = c.getMahoadon().getYear();
+                if (loai.equals(c.getMasanpham().getLoai()) &&year == nam) {
+                    sum += (c.getSoluong()*c.getDongia());
+                }
+            }
+            result.add(sum/1000000);
+            result1.add(loai);
         }
         result2.add(result1);
         result2.add(result);

@@ -287,15 +287,21 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header">
-                                <div class="col-md-8" style="float:left;">
+                                <div class="col-md-6" style="float:left;">
                                 <h3>Thống kê doanh thu</h3>
                                 </div>
-                                <div class="col-md-4" style="float:right;margin-top: 1%">
-                                    <span style="font-weight: bold">năm: </span>
-                                    <select onchange="doanhthunam(this)">
-                                        <option th:each="year : ${years}" th:value="${year}" th:text="${year}">2021</option>
-<!--                                        <option value="2020">2020</option>-->
-<!--                                        <option value="2019">2019</option>-->
+                                <div class="col-md-3" style="float:right;margin-top: 1%">
+                                <span style="font-weight: bold">năm: </span>
+                                <select id="nam" onchange="doanhthunam(this)">
+                                    <option th:each="year : ${years}" th:value="${year}" th:text="${year}">2021</option>
+                                </select>
+                            </div>
+                                <div class="col-md-3" style="float:right;margin-top: 1%">
+                                    <span style="font-weight: bold">thống kê theo: </span>
+                                    <select id="timtheo" onchange="doanhthuloai(this)">
+                                        <option value="nam">tháng</option>
+                                        <option value="loai">loại</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -305,13 +311,20 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header">
-                                <div class="col-md-8" style="float:left;">
+                                <div class="col-md-6" style="float:left;">
                                     <h3>Số lượng sản phẩm đã bán trong tháng</h3>
                                 </div>
-                                <div class="col-md-4" style="float:right;margin-top: 1%">
+                                <div class="col-md-3" style="float:right;margin-top: 1%">
                                     <span style="font-weight: bold">tháng: </span>
-                                    <select onchange="soluongban(this)">
+                                    <select id="thang" onchange="soluongban(this)">
                                         <option th:each="month : ${months}" th:value="${month}" th:text="${month}"></option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" style="float:right;margin-top: 1%">
+                                    <span style="font-weight: bold">thống kê theo: </span>
+                                    <select id="giatri" onchange="giatriban(this)">
+                                        <option value="soluong">số lượng</option>
+                                        <option value="giatri">Giá tiền</option>
                                     </select>
                                 </div>
                             </div>
@@ -346,18 +359,41 @@
 <script>
     function doanhthunam(oject) {
         var year = oject.value;
+        var loai = document.getElementById('timtheo').value;
         $.ajax({
-            url:"/doanhthu?nam="+year,
+            url:"/doanhthu/"+year+"/"+loai,
             success:function (data) {
                 barGraph(data[0],data[1],year)
 
             }
         })
     }
+    function doanhthuloai(oject) {
+        var loai = oject.value;
+        var nam = document.getElementById('nam').value;
+        $.ajax({
+            url:"/doanhthu/"+nam+"/"+loai,
+            success:function (data) {
+                barGraph(data[0],data[1],nam)
+
+            }
+        })
+    }
     function soluongban(object) {
         var month = object.value;
+        var giatri = document.getElementById('giatri').value;
         $.ajax({
-            url:"/soluongban/"+month,
+            url:"/soluongban/"+month+"/"+giatri,
+            success:function (data) {
+                pieChart(data,month)
+            }
+        })
+    }
+    function giatriban(object) {
+        var giatri = object.value;
+        var month = document.getElementById('thang').value;
+        $.ajax({
+            url:"/soluongban/"+month+"/"+giatri,
             success:function (data) {
                 pieChart(data,month)
             }
@@ -382,7 +418,7 @@
                 min: 0,
                 max:1000,
                 title: {
-                    text: 'Đơn vị tính tr'
+                    text: 'Đơn vị tính triệu'
                 }
             },
             tooltip: {
