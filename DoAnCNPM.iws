@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="">
+    <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ThongKeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ThongKeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/barGraph.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/barGraph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/CartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ThongKeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/barGraph.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/barGraph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/trangchu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,11 +61,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
->>>>>>> diem
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -114,7 +106,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6e974ff-0a60-4af7-b645-3d831fc8c7bc" name="Default Changelist" comment="" />
+      <changelist id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="" />
       <created>1619007030817</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -122,12 +114,10 @@
       <workItem from="1619007040895" duration="2248000" />
       <workItem from="1619258902538" duration="17235000" />
       <workItem from="1619322794140" duration="14200000" />
-<<<<<<< HEAD
       <workItem from="1619535296110" duration="55000" />
       <workItem from="1619536712686" duration="2018000" />
       <workItem from="1619859130583" duration="1803000" />
       <workItem from="1619945509260" duration="725000" />
-=======
       <workItem from="1619535296110" duration="795000" />
       <workItem from="1619595895292" duration="683000" />
       <workItem from="1619786171782" duration="12147000" />
@@ -139,23 +129,14 @@
       <workItem from="1620364865971" duration="1717000" />
       <workItem from="1620393249590" duration="11487000" />
       <workItem from="1620443364775" duration="9985000" />
-<<<<<<< HEAD
->>>>>>> diem
-=======
       <workItem from="1620455253867" duration="603000" />
       <workItem from="1620483064697" duration="1307000" />
-<<<<<<< HEAD
->>>>>>> diem
-=======
       <workItem from="1620486118784" duration="1313000" />
       <workItem from="1620959258256" duration="305000" />
       <workItem from="1620967848479" duration="7824000" />
       <workItem from="1620988756540" duration="10262000" />
       <workItem from="1621005102490" duration="3165000" />
       <workItem from="1621055364500" duration="2584000" />
-<<<<<<< HEAD
->>>>>>> diem
-=======
       <workItem from="1621068876980" duration="12770000" />
       <workItem from="1621083613644" duration="128000" />
       <workItem from="1621084105818" duration="3844000" />
@@ -163,42 +144,22 @@
       <workItem from="1621254315624" duration="543000" />
       <workItem from="1621258435168" duration="836000" />
       <workItem from="1621485551654" duration="8032000" />
-<<<<<<< HEAD
->>>>>>> diem
-=======
       <workItem from="1621501699807" duration="825000" />
       <workItem from="1621505667470" duration="4542000" />
       <workItem from="1621515364659" duration="2819000" />
-<<<<<<< HEAD
-<<<<<<< HEAD
       <workItem from="1621581239126" duration="1770000" />
->>>>>>> diem
-=======
       <workItem from="1621581239126" duration="5751000" />
->>>>>>> diem
-=======
       <workItem from="1621581239126" duration="14183000" />
-<<<<<<< HEAD
       <workItem from="1621739800184" duration="11301000" />
->>>>>>> diem
-=======
       <workItem from="1621739800184" duration="11865000" />
-<<<<<<< HEAD
-<<<<<<< HEAD
       <workItem from="1622100198651" duration="2699000" />
->>>>>>> diem
-=======
       <workItem from="1622100198651" duration="4875000" />
->>>>>>> diem
-=======
       <workItem from="1622100198651" duration="8685000" />
-<<<<<<< HEAD
->>>>>>> diem
-=======
       <workItem from="1622117676342" duration="304000" />
       <workItem from="1622119435943" duration="1623000" />
       <workItem from="1622122595274" duration="1725000" />
->>>>>>> diem
+      <workItem from="1622168813906" duration="3649000" />
+      <workItem from="1622208552227" duration="356000" />
     </task>
     <servers />
   </component>
