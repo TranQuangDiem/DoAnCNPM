@@ -1,38 +1,40 @@
 .table td, .dataTable-table td, .table thead th, .dataTable-table thead th {
-    /*display: inline-table;*/
-    white-space: nowrap;
-    text-align: center;
+  /*display: inline-table;*/
+  white-space: nowrap;
+  text-align: center;
 }
 .table td{
-	white-space: nowrap;
+  white-space: nowrap;
 
 }
 .table .font-to{
-	font-size: 25px
+  font-size: 25px
+
 }
-.table a{
-	line-height: 15px
-	
+.table > a{
+  line-height: 15px
+
+
 }
 .table .fa{
-	font-size: 20px
+  font-size: 20px
 
 }
 
-/*checkbox*/
-.table .checkbox-1 {
+/*checkbox cái này ở form chỉnh sửa người dùng*/
+.checkbox-1 .checkbox-2 {
   display: block;
   position: relative;
   width: 55px;
   height: 30px;
-  margin: 50px auto;
+  margin-top: 5px
 }
 
-.table .checkbox-1 > input[type = checkbox] {
+.checkbox-1 .checkbox-2 > input[type = checkbox] {
   display: none;
 }
 
-.table .checkbox-1 .background {
+.checkbox-1 .checkbox-2 .background {
   display: block;
   position: absolute;
   width: 100%;
@@ -43,7 +45,7 @@
   border: 2px solid #eeeeee;
 }
 
-.table .checkbox-1 .mask {
+.checkbox-1 .checkbox-2 .mask {
   display: block;
   position: absolute;
   width: 25px;
@@ -57,17 +59,17 @@
   cursor: pointer;
 }
 
-.table .checkbox-1 > input[type = checkbox]:checked + .background {
+.checkbox-1 .checkbox-2 > input[type = checkbox]:checked + .background {
   background-color: #f74545;
- /* border-color: #f74545;*/
+  /* border-color: #f74545;*/
 }
 
-.table .checkbox-1 > input[type = checkbox]:checked ~ .mask {
+.checkbox-1 .checkbox-2 > input[type = checkbox]:checked ~ .mask {
   left: 27px;
 }
 /*end checkbox*/
 
-/*start popup*/
+/*start popup cái này ở phần quản lý report*/
 .overlay {
   position: fixed;
   top: 0;
@@ -127,8 +129,8 @@
   }
 }
 .popup img{
-	width: 300px;
-	height: 300px
-	margin:30px 60px;
+  width: 300px;
+  height: 300px;
+  margin: 30px 60px;
 }
 /*end poppup*/

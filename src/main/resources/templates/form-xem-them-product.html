@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Layout - Voler Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/assets/css/quanLyNTD.css">
+    <link rel="stylesheet" href="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../static/assets/css/app.css">
+    <link rel="shortcut icon" href="../static/assets/images/favicon.svg" type="image/x-icon">
+</head>
+<style>
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+        position: relative;
+    }
+
+    .thumbnail img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .thumbnail a {
+        /* display: block; */
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        overflow: hidden;
+        text-indent: -9999px;
+    }
+</style>
+<body>
+<div id="app">
+
+    <div id="main">
+
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Xem thêm</h3>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                <li class="breadcrumb-item"><a href="quanLyNTD.html">Quản lý sản phẩm</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Xem thêm</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- // Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <div class="row match-height">
+                    <div class="col-12">
+                        <div class="card">
+
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form">
+                                        <div class="row">
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Tên sản phẩm</label>
+                                                    <input type="text" id="first-name-column" class="form-control"
+                                                           name="ten-column" value="Bàn uống nước">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Loại</label>
+                                                    <input type="text" id="first-name-column" class="form-control"
+                                                           value="Bàn" name="loai-column">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Màu sắc</label>
+                                                    <input type="text" id="first-name-column" class="form-control"
+                                                           value="Trắng kem" name="mausac-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Giá</label>
+                                                    <input type="text" id="first-name-column" class="form-control"
+                                                           value="1222222" name="gia-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Kích thước</label>
+                                                    <input type="text" id="first-name-column" class="form-control"
+                                                           value="D1965 - R835 - C805" name="gia-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Số lượng</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                           value="10" name="gia-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">IsHot/IsSale</label>
+                                                    <div>
+                                                        <div class="" style="display: flex;flex-flow: row nowrap;">
+                                                            <div class="primary-switch">
+                                                                <input type="checkbox" id="default-switch">
+                                                                <label for="default-switch">IsHot</label>
+                                                            </div>
+                                                            <div class="primary-switch" style="margin-left: 10px;">
+                                                                <input type="checkbox" id="default-switch">
+                                                                <label for="default-switch">IsSale</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Detph</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                           value="10" name="detph-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Height</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                           value="10" name="height-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Width</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                           value="10" name="width-column">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Hình ảnh</label>
+                                                    <div style="display: flex;flex-flow: row nowrap; margin: 2px;">
+                                                        <div class="thumbnail">
+                                                            <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"
+                                                                 style="height: 70px;width: 70px;">
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit"
+                                                            class="btn btn-primary mr-1 mb-1">Thêm</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-column">Chi tiết</label>
+                                                    <textarea type="text" id="first-name-column"
+                                                              class="form-control" name="info-column"
+                                                              style="height: 120px;">Một chiếc bàn làm việc đẹp với phong cách hiện đại bởi đường nét hoa văn đơn giản, ít chi tiết,không cầu kỳ nhưng vẫn sang trọng là điều mà mọi người đều mong muốn tìm kiếm.
+                                                        </textarea>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit"
+                                                        class="btn btn-primary mr-1 mb-1">Save</button>
+                                                <button type="submit"
+                                                        class="btn btn-primary mr-1 mb-1">Exit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic multiple Column Form section end -->
+        </div>
+
+        <footer>
+            <div class="footer clearfix mb-0 text-muted">
+                <div class="float-left">
+                    <p>2020 &copy; Voler</p>
+                </div>
+                <div class="float-right">
+                    <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
+                            href="http://ahmadsaugi.com">Ahmad Saugi</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="../static/assets/js/feather-icons/feather.min.js"></script>
+<script src="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="../static/assets/js/app.js"></script>
+
+<script src="../static/assets/js/main.js"></script>
+</body>
+</html>

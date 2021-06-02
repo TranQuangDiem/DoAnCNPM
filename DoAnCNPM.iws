@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/chiTietGoiBaiDang.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/chiTietQuanLyBaiDang.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/quanLyBaiDang.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/changeInfomation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/changePass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/form-xem-them-product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ordersManagement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyDanhGia.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyDonHang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/trangchu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/css/quanLyNTD.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/quanLyNTD.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +47,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,10 +70,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -81,6 +90,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="DoAnCNPM" />
       <extension name="coverage">
@@ -160,6 +180,11 @@
       <workItem from="1622122595274" duration="1725000" />
       <workItem from="1622168813906" duration="3649000" />
       <workItem from="1622208552227" duration="356000" />
+      <workItem from="1622216834455" duration="1826000" />
+      <workItem from="1622299806373" duration="76000" />
+      <workItem from="1622302172173" duration="1548000" />
+      <workItem from="1622358771513" duration="21000" />
+      <workItem from="1622594282568" duration="3138000" />
     </task>
     <servers />
   </component>
@@ -187,5 +212,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
