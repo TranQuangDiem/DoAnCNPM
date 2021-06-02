@@ -5,12 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sources.service.ThongKeService;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 @Controller
 public class ThongKeController {
@@ -18,17 +16,19 @@ public class ThongKeController {
     ThongKeService thongKeService;
     @GetMapping("/admin")
     public String trangchu(Model model){
-        model.addAttribute("tongdoanhthu",thongKeService.tongDoanhThu());
-        model.addAttribute("tongUser",thongKeService.tongUser());
-        model.addAttribute("doanhthuhomnay",thongKeService.doanhThuHomNay());
-        model.addAttribute("years",thongKeService.getByYear());
+
         long millis = System.currentTimeMillis();
         java.sql.Date date = new java.sql.Date(millis);
         String ngay = ""+date;
         String[] listdate = ngay.split("-");
+        model.addAttribute("surveyMap",thongKeService.doanhthuthangtheonam(Integer.parseInt(listdate[0])));
+        model.addAttribute("tongdoanhthu",thongKeService.tongDoanhThu());
+        model.addAttribute("tongUser",thongKeService.tongUser());
+        model.addAttribute("doanhthuhomnay",thongKeService.doanhThuHomNay());
+        model.addAttribute("years",thongKeService.getByYear());
         model.addAttribute("months",thongKeService.getMonthByYear());
         model.addAttribute("soluongban",thongKeService.soLuongBanTheoLoai(Integer.parseInt(listdate[1]),Integer.parseInt(listdate[0])));
-        model.addAttribute("surveyMap",thongKeService.doanhthuthangtheonam(Integer.parseInt(listdate[0])));
+
         return "trangchu";
     }
     @GetMapping("/chart")
