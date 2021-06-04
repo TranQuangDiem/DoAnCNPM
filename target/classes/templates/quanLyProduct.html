@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table - Voler Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/assets/css/all.min.css">
+    <link rel="stylesheet" href="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../static/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../static/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/quanLybaiDang.css">
+</head>
+<body>
+<div id="app">
+    <div id="main">
+
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Quản lý sản phẩm</h3>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Quản lý sản phẩm</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Hoverable rows start -->
+            <div class="row" id="table-hover-row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title" style="float: left;">Quản lý sản phẩm</h4>
+                            <a href="" class="btn-green" style="float: right;">
+                                <button class="btn btn-primary" type="submit">Thêm</button>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <!-- table hover -->
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Tên</th>
+                                        <th>Images</th>
+                                        <th>Giá</th>
+                                        <th>Loại</th>
+                                        <th>Xem thêm</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr>
+                                        <td class="text-bold">1</td>
+                                        <td class="text-bold">Bàn uống nước</td>
+                                        <td class="text-bold">
+                                            <div style="display: flex;flex-flow: row nowrap;margin: 2px;">
+                                                <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"
+                                                     style="width: 50px;height: 50px;">
+                                                <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"
+                                                     style="width: 50px;height: 50px;">
+                                                <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"
+                                                     style="width: 50px;height: 50px;">
+                                            </div>
+
+                                        </td>
+                                        <td class="text-bold">20000</td>
+                                        <td class="text-bold">Bàn</td>
+                                        <td class="text-bold">
+                                            <a class="btn green mr0 btn-search-text-single btnSearchMore">
+                                                <i class="fa fa-ellipsis-h" style="color: #cecccc"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-bold">
+                                            <a class="btn green mr0 btn-search-text-single btnSearchMore">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hoverable rows end -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+</div>
+<script src="../static/assets/js/feather-icons/feather.min.js"></script>
+<script src="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="../static/assets/js/app.js"></script>
+
+<script src="../static/assets/js/main.js"></script>
+</body>
+</html>

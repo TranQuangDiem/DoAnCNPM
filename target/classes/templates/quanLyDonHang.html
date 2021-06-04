@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/assets/css/all.min.css">
+    <link rel="stylesheet" href="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../static/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../static/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/quanLyBaiDang.css">
+</head>
+<body>
+<div id="app">
+
+    <div id="main">
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Quản lý đơn hàng</h3>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Quản lý đơn hàng</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Hoverable rows start -->
+            <div class="row" id="table-hover-row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Quản lý đơn hàng</h4>
+                        </div>
+                        <div class="card-content">
+                            <!-- table hover -->
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Người Nhận</th>
+                                        <th>Tổng Tiền</th>
+                                        <th>SĐT</th>
+                                        <th>Địa Chỉ</th>
+                                        <th>Loại Thanh Toán</th>
+                                        <th>Ngày Mua</th>
+                                        <th>Ghi chú</th>
+                                        <th>Trạng thái</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr>
+                                        <td class="text-bold">1</td>
+                                        <td class="text-bold">Nguyễn Văn A</td>
+                                        <td class="text-bold">123456</td>
+                                        <td class="text-bold">123456</td>
+                                        <td class="text-bold">Thu Dức</td>
+                                        <td class="text-bold">COD</td>
+                                        <td class="text-bold">1/1/2021</td>
+                                        <td class="text-bold">10/1/2021</td>
+                                        <td>
+                                            abc
+                                        </td>
+
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hoverable rows end -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+</div>
+<script src="../static/assets/js/feather-icons/feather.min.js"></script>
+<script src="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="../static/assets/js/app.js"></script>
+
+<script src="../static/assets/js/main.js"></script>
+</body>
+</html>

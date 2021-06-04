@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table - Voler Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/assets/css/all.min.css">
+    <link rel="stylesheet" href="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../static/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../static/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/quanLyNTD.css">
+</head>
+<body>
+<div id="app">
+    <div id="sidebar" class='active'>
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <img src="assets/images/logo.svg" alt="" srcset="">
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+
+
+                    <li class='sidebar-title'>Main Menu</li>
+
+
+
+                    <li class="sidebar-item ">
+                        <a href="index.html" class='sidebar-link'>
+                            <i data-feather="home" width="20"></i>
+                            <span>Trang chủ</span>
+                        </a>
+
+                    </li>
+
+
+
+
+                    <li class="sidebar-item  has-sub active">
+                        <a href="#" class='sidebar-link'>
+                            <i data-feather="triangle" width="20"></i>
+                            <span>Quản Lý Tài Khoản</span>
+                        </a>
+
+                        <ul class="submenu ">
+
+                            <li>
+                                <a href="quanLyNTD.html">Employer</a>
+                            </li>
+
+                            <li>
+                                <a href="quanLyFreelancer.html">Freelancer</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+
+
+
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i data-feather="briefcase" width="20"></i>
+                            <span>Quản Lý Gói</span>
+                        </a>
+
+                        <ul class="submenu ">
+
+                            <li>
+                                <a href="quanLyBaiDang.html">Bài Đăng</a>
+                            </li>
+
+                            <li>
+                                <a href="quanLyGoiBaiDang.html">Gói Bài Đăng</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="sidebar-item  ">
+                        <a href="quanLyChuyenMon.html" class='sidebar-link'>
+                            <i data-feather="grid" width="20"></i>
+                            <span>Quản Lý Chuyên Môn</span>
+                        </a>
+
+                    </li>
+
+
+
+
+                    <li class="sidebar-item  ">
+                        <a href="quanLyDanhGia.html" class='sidebar-link'>
+                            <i data-feather="layers" width="20"></i>
+                            <span>Quản Lý Đánh Giá</span>
+                        </a>
+
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="quanLyReport.html" class='sidebar-link'>
+                            <i data-feather="alert-circle" width="20"></i>
+                            <span>Quản Lý Reports</span>
+                        </a>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+    <div id="main">
+
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Quản lý User</h3>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">User</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Hoverable rows start -->
+            <div class="row" id="table-hover-row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Users</h4>
+                        </div>
+                        <div class="card-content">
+                            <!-- table hover -->
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+
+                                        <th>Email</th>
+                                        <th>Full name</th>
+                                        <th>Phone Number</th>
+                                        <th>adress</th>
+                                        <th>Block</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-bold-500">112</td>
+                                        <td>nguyenvana@gmail.com</td>
+                                        <td>Đào Trí Thiện</td>
+                                        <td>45423523</td>
+                                        <td>Linh Trung</td>
+                                        <td>
+                                            <div class="form-group checkbox-1">
+
+                                                <label class="checkbox-2" name="block-column">
+                                                    <input type="checkbox">
+                                                    <span class="background"></span>
+                                                    <span class="mask"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td><button type="submit"
+                                                    class="btn btn-primary mr-1 mb-1">Save</button></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hoverable rows end -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-primary" style="left: 50%;
+    position: relative;">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+</div>
+<script src="../static/assets/js/feather-icons/feather.min.js"></script>
+<script src="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="../static/assets/js/app.js"></script>
+
+<script src="../static/assets/js/main.js"></script>
+</body>
+</html>

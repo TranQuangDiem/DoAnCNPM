@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/chiTietGoiBaiDang.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/chiTietQuanLyBaiDang.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/quanLyBaiDang.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/changeInfomation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/changePass.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/form-xem-them-product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ordersManagement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyDanhGia.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyDonHang.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyProduct.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/css/quanLyNTD.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/quanLyNTD.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,30 +64,19 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\DoAnCNPM\src\main\resources\static\assets\vendors\choices.js" />
-      <recent name="D:\DoAnCNPM\src\main\resources\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DoAnCNPM\src\main\resources\templates" />
       <recent name="D:\DoAnCNPM\src\main\resources\templates" />
       <recent name="D:\DoAnCNPM\src\main\resources\static\assets\css" />
       <recent name="D:\DoAnCNPM\src\main\resources\static.assets" />
       <recent name="D:\DoAnCNPM\src\main\resources\templates\admin" />
-      <recent name="D:\DoAnCNPM\src\main\resources\static\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DoAnCNPM\src\main\resources\static\assets\vendors\choices.js" />
+      <recent name="D:\DoAnCNPM\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="DoAnCNPM" />
       <extension name="coverage">
@@ -184,7 +160,9 @@
       <workItem from="1622299806373" duration="76000" />
       <workItem from="1622302172173" duration="1548000" />
       <workItem from="1622358771513" duration="21000" />
-      <workItem from="1622594282568" duration="3138000" />
+      <workItem from="1622594282568" duration="4273000" />
+      <workItem from="1622605577498" duration="481000" />
+      <workItem from="1622694353622" duration="275000" />
     </task>
     <servers />
   </component>
