@@ -11,4 +11,6 @@ import java.util.List;
 @Repository
 public interface ChiTietDonHangDAO extends JpaRepository<ChiTietDonHang,Long> {
     List<ChiTietDonHang> findByMasanpham_Loai (String loai);
+    List<ChiTietDonHang> findByMahoadon_IdUser_Id(long idUser);
+    List<ChiTietDonHang> findByMahoadon_IdUser_IdAndAndMahoadon_Tinhtrang(long idUser,String tinhTrang);
 }

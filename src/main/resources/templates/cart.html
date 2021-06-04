@@ -104,8 +104,8 @@
 <!--                        <input style="display: none" id="myCartTotal" type="text" th:value="${session.myCartTotal*0.000044}" name="price"/>-->
 <!--                        <button style="border: none" class="btn_1" type="submit"> Thanh toán paypal</button>-->
 <!--                    </form>-->
-                    <a class="btn_1" th:href="@{/login}" th:if="${session.user==null}">Đặt hàng</a>
-                    <a class="btn_1" th:href="@{/checkout}" th:if="${session.user!=null}"> Đặt hàng</a>
+<!--                    <a class="btn_1" th:href="@{/login}" th:if="${session.user==null}">Đặt hàng</a>-->
+                    <a class="btn_1" th:href="@{/checkout}"> Đặt hàng</a>
                 </div>
             </div>
             <h1 th:if="${session.myCartItems==null}">chưa có sản phẩm trong giỏ hàng</h1>

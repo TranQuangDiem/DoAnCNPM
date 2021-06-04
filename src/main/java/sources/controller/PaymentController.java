@@ -6,11 +6,11 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import com.paypal.api.payments.Links;
 import com.paypal.api.payments.Payment;
@@ -25,8 +25,9 @@ import sources.thanhtoan.PaypalPaymentMethod;
 import sources.thanhtoan.service.PaypalService;
 import sources.thanhtoan.util.Utils;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 public class PaymentController {
@@ -158,5 +159,51 @@ public class PaymentController {
             count += list.getValue().getProduct().get().getGia() * list.getValue().getSoluong();
         }
         return count;
+    }
+    @GetMapping("/DonHang")
+    public String ordersManger(Model model,HttpSession session){
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("chitietdonhangs",chiTietDonHangService.findByMahoadon_IdUser(user.getId()));
+        model.addAttribute("donhangs",donHangService.findByIdUser(user.getId()));
+
+        return "ordersManagement";
+    }
+    @GetMapping("/Admin/QuanLyDonHang")
+    public String quanlydonhang(Model model,@RequestParam(required = false, value = "page") Optional<Integer> page,
+                                @RequestParam("size") Optional<Integer> size){
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(10);
+        int pagePrivious = page.orElse(1);
+        pagePrivious--;
+        int pageMax = page.orElse(1);
+        pageMax++;
+        model.addAttribute("pagePrivious", pagePrivious);
+
+        Page<DonHang> donHangPage=donHangService.findPaginated(PageRequest.of(currentPage - 1, pageSize));
+        model.addAttribute("donhangs", donHangPage);
+
+        int totalPages = donHangPage.getTotalPages();
+        if (totalPages > 0) {
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages).boxed().collect(Collectors.toList());
+            model.addAttribute("pageNumbers", pageNumbers);
+            if (pageMax > pageNumbers.get(pageNumbers.size() - 1)) {
+                pageMax = 0;
+            }
+        }
+        model.addAttribute("pageMax", pageMax);
+        return "quanLyDonHang";
+    }
+    @GetMapping("/QuanLyDonHang/{tinhtrang}/{id}")
+    @ResponseBody
+    public List<List> sapxep(@PathVariable("tinhtrang") String tinhtrang, @PathVariable("id") long id){
+        List<List> result = new ArrayList<List>();
+        if (tinhtrang.equals("all")){
+            result.add(donHangService.findByIdUser(id));
+            result.add(chiTietDonHangService.findByMahoadon_IdUser(id));
+            return result;
+        }
+        result.add(donHangService.findByIdUserAndTinhTrang(id,tinhtrang));
+        result.add(chiTietDonHangService.findByMahoadon_IdUser_IdAndMahoadon_Tinhtrang(id,tinhtrang));
+        return result;
     }
 }

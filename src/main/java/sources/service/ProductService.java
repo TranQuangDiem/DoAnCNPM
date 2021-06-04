@@ -17,6 +17,9 @@ import java.util.Optional;
 public class ProductService {
     @Autowired
     ProductDAO productDAO;
+    public void save(Product product){
+        productDAO.save(product);
+    }
     public Product findId(long id){
         return productDAO.findId(id);
     }

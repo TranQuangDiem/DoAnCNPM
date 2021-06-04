@@ -1,11 +1,16 @@
 package sources.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import sources.DAO.DonHangDAO;
 import sources.entity.DonHang;
 import sources.model.SendMail;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -20,5 +25,29 @@ public class DonHangService {
     }
     public List<DonHang> findAll(){
         return donHangDAO.findAll();
+    }
+    public List<DonHang> findByIdUser (long idUser){
+        return donHangDAO.findByIdUser_Id(idUser);
+    }
+    public List<DonHang> findByIdUserAndTinhTrang (long idUser, String tinhtrang){
+        return donHangDAO.findByIdUser_IdAndTinhtrang(idUser,tinhtrang);
+    }
+    public Page<DonHang> findPaginated(Pageable pageable) {
+        List<DonHang> donhang =donHangDAO.findAll();
+        int pageSize = pageable.getPageSize();
+        int currentPage = pageable.getPageNumber();
+        int startItem = currentPage * pageSize;
+        List<DonHang> list;
+
+        if (donhang.size() < startItem) {
+            list = Collections.emptyList();
+        } else {
+            int toIndex = Math.min(startItem + pageSize, donhang.size());
+            list = donhang.subList(startItem, toIndex);
+        }
+
+        Page<DonHang> donHangPage = new PageImpl<>(list, PageRequest.of(currentPage, pageSize), donhang.size());
+
+        return donHangPage;
     }
 }

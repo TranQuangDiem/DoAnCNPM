@@ -54,6 +54,9 @@
                             <form class="row contact_form" th:action="@{/login}" method="post" novalidate="novalidate">
 
                                 <div class="col-md-12 form-group p_star">
+                                    <div th:if="${#request.getParameter('error') == 'true'}" style="color:red">
+                                        <span> Email hoặc password không đúng !</span>
+                                    </div>
                                     <span style="color: red" th:text="${error}"></span>
                                     <input type="email" required class="form-control" id="email" name="email" value=""
                                         placeholder="Email">

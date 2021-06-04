@@ -19,4 +19,6 @@ public interface DonHangDAO extends JpaRepository<DonHang,Long> {
     List<Integer> getByYear();
     @Query(value = "select DISTINCT  month from DonHang where year =:year order by month desc",nativeQuery = true)
     List<Integer> getMonthByYear(@Param("year") int year);
+    List<DonHang> findByIdUser_Id(long idUser);
+    List<DonHang> findByIdUser_IdAndTinhtrang(long idUser,String tinhtrang);
 }

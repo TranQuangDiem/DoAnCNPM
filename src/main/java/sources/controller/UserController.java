@@ -1,7 +1,11 @@
 package sources.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +17,12 @@ import sources.service.ProductService;
 import sources.service.UserService;
 
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 public class UserController {
@@ -23,6 +33,8 @@ public class UserController {
     ProductService productService;
     @Autowired
     SendMail sendMail;
+    @Autowired
+    PasswordEncoder passwordEncoder;
     @GetMapping("/")
     public String home(Model model){
         model.addAttribute("product",productService.findAllLimit(true,8));
@@ -34,8 +46,11 @@ public class UserController {
         return "login";
     }
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String dangNhap(Model model, @RequestParam(value = "email") String email, @RequestParam(value = "pass") String pass, HttpSession session){
-       User user= userService.checkLogin(email,pass);
+    public String dangNhap(Model model, Principal principal, @RequestParam(value = "email") String email, @RequestParam(value = "pass") String pass, HttpSession session){
+        User loginedUser = (User) ((Authentication) principal).getPrincipal();
+        session.setAttribute("user",loginedUser);
+        System.out.println(loginedUser);
+        User user= userService.checkLogin(email,pass);
         if(user!=null&&user.getActive()==1&&user.getLevel().getId()==1){
             session.setAttribute("user",userService.checkLogin(email,pass));
             return "redirect:/";
@@ -63,6 +78,7 @@ public class UserController {
         int code = (int) Math.floor(((Math.random() * 899999) + 10000000));
         user.setActive(code);
         user.setLevel(new Role(1,"user"));
+        user.setPass(passwordEncoder.encode(user.getPass()));
         String subject = "Xác minh địa chỉ email của bạn";
         String content = "Xác minh địa chỉ email của bạn\n" +
                 "Để hoàn tất việc thiết lập tài khoản, chúng tôi chỉ cần đảm bảo rằng địa chỉ email này là của bạn.\n" +
@@ -160,5 +176,58 @@ public class UserController {
     public String logout (HttpSession session){
         session.invalidate();
         return "redirect:/";
+    }
+    @GetMapping("/QuanLyThongTin")
+    public String quanLyThongTin(){
+        return "changeInfomation";
+    }
+    @PostMapping("/QuanLyThongTin")
+    public String changeInformation (@ModelAttribute("User") User user, HttpSession session){
+        User user1 = (User) session.getAttribute("user");
+        user1.setUsername(user.getUsername());
+        user1.setPhone(user.getPhone());
+        user1.setAddress(user.getAddress());
+        session.setAttribute("user",user1);
+        userService.save(user1);
+        return "redirect:/QuanLyThongTin";
+    }
+    @GetMapping("/Admin/QuanLyUser")
+    public String quanlyuser(Model model, @RequestParam(required = false, value = "page") Optional<Integer> page,
+                             @RequestParam("size") Optional<Integer> size){
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(10);
+        int pagePrivious = page.orElse(1);
+        pagePrivious--;
+        int pageMax = page.orElse(1);
+        pageMax++;
+        model.addAttribute("pagePrivious", pagePrivious);
+
+        Page<User> userPage=userService.findPaginated(PageRequest.of(currentPage - 1, pageSize), 1);
+        model.addAttribute("users", userPage);
+
+        int totalPages = userPage.getTotalPages();
+        if (totalPages > 0) {
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages).boxed().collect(Collectors.toList());
+            model.addAttribute("pageNumbers", pageNumbers);
+            if (pageMax > pageNumbers.get(pageNumbers.size() - 1)) {
+                pageMax = 0;
+            }
+        }
+        model.addAttribute("pageMax", pageMax);
+        return "quanLyUser";
+    }
+    @GetMapping("/Admin/QuanLyUser/Block")
+    @ResponseBody
+    public List<String> block (@RequestParam("block") int block,@RequestParam("id") long id){
+        User user = userService.findById(id);
+        user.setActive(block);
+        userService.save(user);
+        List<String> result = new ArrayList<>();
+        result.add("true");
+        return result;
+    }
+    @GetMapping("/403")
+    public String err403(){
+        return "403";
     }
 }

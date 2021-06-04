@@ -74,7 +74,8 @@
                                 <i class="fa fa-user" aria-hidden="true"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                <a class="dropdown-item" href="blog.html">Thông tin cá nhân</a>
+                                <a class="dropdown-item" th:href="@{/admin}" th:if="${session.user.getLevel().getTen().equals('ROLE_ADMIN')}">Trang Quản Lý</a>
+                                <a class="dropdown-item" th:href="@{/QuanLyThongTin}">Thông tin cá nhân</a>
                                 <a class="dropdown-item" th:href="@{/logout}">Đăng xuất</a>
                             </div>
                         </div>

@@ -18,4 +18,10 @@ public class ChiTietDonHangService {
     public List<ChiTietDonHang> findAll(){
         return chiTietDonHangDAO.findAll();
     }
+    public List<ChiTietDonHang> findByMahoadon_IdUser(long idUser){
+        return chiTietDonHangDAO.findByMahoadon_IdUser_Id(idUser);
+    }
+   public List<ChiTietDonHang> findByMahoadon_IdUser_IdAndMahoadon_Tinhtrang(long idUser,String tinhTrang){
+        return chiTietDonHangDAO.findByMahoadon_IdUser_IdAndAndMahoadon_Tinhtrang(idUser, tinhTrang);
+    }
 }

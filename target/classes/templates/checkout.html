@@ -103,8 +103,15 @@
                         </ul>
                         <ul class="list list_2">
                             <li>
+                                <a href="#">Thuế 10%:
+                                    <span th:text="${session.myCartTotal*0.1}+'VNĐ'">$2210.00</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="list list_2">
+                            <li>
                                 <a href="#">Thành tiền
-                                    <span th:text="${session.myCartTotal}+'VNĐ'">$2210.00</span>
+                                    <span th:text="${session.myCartTotal+session.myCartTotal*0.1}+'VNĐ'">$2210.00</span>
                                 </a>
                             </li>
                         </ul>
