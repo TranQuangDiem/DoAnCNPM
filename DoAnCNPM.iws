@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/model/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/model/CustomUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/form-chinh-sua-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/form-chinh-sua-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/form-xem-them-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/form-xem-them-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ordersManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ordersManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quanLyProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyProduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/model/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/model/CustomUserDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/form-chinh-sua-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/form-chinh-sua-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/form-xem-them-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/form-xem-them-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/ordersManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ordersManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/quanLyProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/quanLyProduct.html" afterDir="false" />
-    </list>
+    <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +182,7 @@
       <workItem from="1622861648703" duration="3682000" />
       <workItem from="1622883866636" duration="7012000" />
       <workItem from="1622891141259" duration="2911000" />
-      <workItem from="1622942030390" duration="3255000" />
+      <workItem from="1622942030390" duration="3517000" />
     </task>
     <servers />
   </component>
