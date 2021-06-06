@@ -5,50 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DoAnCNPM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoAnCNPM.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/ChiTietDonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/ChiTietDonHangDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ChiTietDonHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ChiTietDonHangService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/model/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/model/CustomUserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/changeInfomation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/changeInfomation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/form-chinh-sua-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/form-chinh-sua-product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/form-xem-them-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/form-xem-them-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ordersManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ordersManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quanLyDonHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyDonHang.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quanLyProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyProduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quanLyUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/trangchu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/ChiTietDonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/ChiTietDonHangDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/config/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ThongKeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ChiTietDonHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ChiTietDonHangService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/model/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/model/CustomUserDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/ProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/quanLyNTD.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/css/quanLyNTD.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/changeInfomation.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/changeInfomation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/trangchu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/trangchu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/form-chinh-sua-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/form-chinh-sua-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/form-xem-them-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/form-xem-them-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ordersManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ordersManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/quanLyProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/quanLyProduct.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +75,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -222,6 +208,11 @@
       <workItem from="1622434546386" duration="57000" />
       <workItem from="1622772580117" duration="11668000" />
       <workItem from="1622797380435" duration="10151000" />
+      <workItem from="1622810064356" duration="3394000" />
+      <workItem from="1622861648703" duration="3682000" />
+      <workItem from="1622883866636" duration="7012000" />
+      <workItem from="1622891141259" duration="2911000" />
+      <workItem from="1622942030390" duration="3255000" />
     </task>
     <servers />
   </component>

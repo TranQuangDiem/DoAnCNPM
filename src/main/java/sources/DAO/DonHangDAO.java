@@ -21,4 +21,5 @@ public interface DonHangDAO extends JpaRepository<DonHang,Long> {
     List<Integer> getMonthByYear(@Param("year") int year);
     List<DonHang> findByIdUser_Id(long idUser);
     List<DonHang> findByIdUser_IdAndTinhtrang(long idUser,String tinhtrang);
+    DonHang findById(long id);
 }

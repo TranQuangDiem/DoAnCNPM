@@ -15,9 +15,10 @@ import sources.model.MyUploadForm;
 import sources.service.ProductService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -26,7 +27,7 @@ import java.util.stream.IntStream;
 public class ProductController {
     @Autowired
     ProductService productService;
-
+    private static final Path CURRENT_FOLDER = Paths.get(System.getProperty("user.dir"));
     @GetMapping("/chitietsanpham")
     public String chitiet(Model model, @RequestParam("id") long id) {
         if (productService.existsById(id)) {
@@ -127,11 +128,35 @@ public class ProductController {
         return "quanLyProduct";
     }
 
-//    @GetMapping("/Admin/QuanLySanPham/Them")
-//    public String themsanpham(){
-//        return "form-xem-them-product";
-//    }
+    @GetMapping("/Admin/QuanLySanPham/Sua")
+    public String editSanPham(@RequestParam("id") long id,Model model){
+        model.addAttribute("product",productService.findById(id));
+        return "form-chinh-sua-product";
+    }
+    @RequestMapping(value = "/Admin/QuanLySanPham/Sua", method = RequestMethod.POST)
+    public String editSanPham(HttpServletRequest request,@RequestParam("id") long id, Model model,@ModelAttribute("myUploadForm") MyUploadForm myUploadForm) throws IOException {
+        Product product = productService.findId(id);
+        MultipartFile[] fileDatas = myUploadForm.getFileDatas();
+        if(!fileDatas[0].isEmpty()){
+            return this.luuSp(request,model,myUploadForm,product);
+        }else {
+            product.setTen(myUploadForm.getTen());
+            product.setGia(myUploadForm.getGia());
+            product.setSoluong(myUploadForm.getSoluong());
+            product.setChitiet(myUploadForm.getChitiet());
+            product.setLoai(myUploadForm.getLoai());
+            product.setMausac(myUploadForm.getMausac());
+            product.setKichthuoc(myUploadForm.getKichthuoc());
+            product.setDetph(myUploadForm.getDetph());
+            product.setHeight(myUploadForm.getHeight());
+            product.setWidth(myUploadForm.getWidth());
+            product.setTrangthaiHot(myUploadForm.isTrangthaiHot());
+            product.setTrangthaiSale(myUploadForm.isTrangthaiSale());
+            productService.save(product);
+        }
 
+        return "redirect:/Admin/QuanLySanPham";
+    }
 
     // GET: Hiển thị trang form upload
     @RequestMapping(value = "/Admin/QuanLySanPham/Them", method = RequestMethod.GET)
@@ -143,13 +168,12 @@ public class ProductController {
 
     // POST: Sử lý Upload
     @RequestMapping(value = "/uploadOneFile", method = RequestMethod.POST)
-    public String uploadOneFileHandlerPOST(HttpServletRequest request, Model model,@ModelAttribute("myUploadForm") MyUploadForm myUploadForm) {
+    public String uploadOneFileHandlerPOST(HttpServletRequest request, Model model,@ModelAttribute("myUploadForm") MyUploadForm myUploadForm) throws IOException {
         return this.doUpload(request, model, myUploadForm);
     }
-    private String doUpload(HttpServletRequest request, Model model,MyUploadForm myUploadForm) {
-
-//        String description = myUploadForm.getDescription();
-//        System.out.println("Description: " + description);
+    private String doUpload(HttpServletRequest request, Model model, MyUploadForm myUploadForm) throws IOException {
+        Path staticPath = Paths.get("static");
+        Path imagePath = Paths.get("images");
         Product product = new Product();
         product.setTen(myUploadForm.getTen());
         product.setGia(myUploadForm.getGia());
@@ -163,50 +187,58 @@ public class ProductController {
         product.setWidth(myUploadForm.getWidth());
         product.setTrangthaiHot(myUploadForm.isTrangthaiHot());
         product.setTrangthaiSale(myUploadForm.isTrangthaiSale());
-
-        // Thư mục gốc upload file.
-        String uploadRootPath = "D:\\DoAnCNPM\\src\\main\\resources\\static\\img";
-        System.out.println("uploadRootPath=" + uploadRootPath);
-
-        File uploadRootDir = new File(uploadRootPath);
-        // Tạo thư mục gốc upload nếu nó không tồn tại.
-        if (!uploadRootDir.exists()) {
-            uploadRootDir.mkdirs();
+        MultipartFile fileDatas = myUploadForm.getFileDatas()[0];
+        if (!Files.exists(CURRENT_FOLDER.resolve(staticPath).resolve(imagePath))) {
+            Files.createDirectories(CURRENT_FOLDER.resolve(staticPath).resolve(imagePath));
         }
-        MultipartFile[] fileDatas = myUploadForm.getFileDatas();
-        //
-        List<File> uploadedFiles = new ArrayList<File>();
-        List<String> failedFiles = new ArrayList<String>();
-        for (MultipartFile fileData : fileDatas) {
-
-            // Tên file gốc tại Client.
-            String name = fileData.getOriginalFilename();
-            product.setImg("/img/"+name);
-            System.out.println("Client File Name = " + name);
-
-            if (name != null && name.length() > 0) {
-                try {
-                    // Tạo file tại Server.
-                    File serverFile = new File(uploadRootDir.getAbsolutePath() + File.separator + name);
-
-                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-                    stream.write(fileData.getBytes());
-                    stream.close();
-                    //
-                    uploadedFiles.add(serverFile);
-                    System.out.println("Write file: " + serverFile);
-                    productService.save(product);
-                } catch (Exception e) {
-                    System.out.println("Error Write file: " + name);
-                    failedFiles.add(name);
-                }
-            }
+        Path file = CURRENT_FOLDER.resolve(staticPath)
+                .resolve(imagePath).resolve(fileDatas.getOriginalFilename());
+        try (OutputStream os = Files.newOutputStream(file)) {
+            System.out.println(file.toString());
+            os.write(fileDatas.getBytes());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
+
+        product.setImg("/"+imagePath.resolve(fileDatas.getOriginalFilename()).toString());
+        productService.save(product);
+        return "redirect:/Admin/QuanLySanPham";
+    }
+    private String luuSp(HttpServletRequest request, Model model, MyUploadForm myUploadForm,Product product) throws IOException {
+        Path staticPath = Paths.get("static");
+        Path imagePath = Paths.get("images");
+        product.setTen(myUploadForm.getTen());
+        product.setGia(myUploadForm.getGia());
+        product.setSoluong(myUploadForm.getSoluong());
+        product.setChitiet(myUploadForm.getChitiet());
+        product.setLoai(myUploadForm.getLoai());
+        product.setMausac(myUploadForm.getMausac());
+        product.setKichthuoc(myUploadForm.getKichthuoc());
+        product.setDetph(myUploadForm.getDetph());
+        product.setHeight(myUploadForm.getHeight());
+        product.setWidth(myUploadForm.getWidth());
+        product.setTrangthaiHot(myUploadForm.isTrangthaiHot());
+        product.setTrangthaiSale(myUploadForm.isTrangthaiSale());
+        MultipartFile fileDatas = myUploadForm.getFileDatas()[0];
+        if (!Files.exists(CURRENT_FOLDER.resolve(staticPath).resolve(imagePath))) {
+            Files.createDirectories(CURRENT_FOLDER.resolve(staticPath).resolve(imagePath));
+        }
+        Path file = CURRENT_FOLDER.resolve(staticPath)
+                .resolve(imagePath).resolve(fileDatas.getOriginalFilename());
+        try (OutputStream os = Files.newOutputStream(file)) {
+            System.out.println(file.toString());
+            os.write(fileDatas.getBytes());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+       product.setImg("/"+imagePath.resolve(fileDatas.getOriginalFilename()).toString());
+        productService.save(product);
         return "redirect:/Admin/QuanLySanPham";
     }
     @GetMapping("/Admin/QuanLySanPham/Delete")
-    public String delete(@RequestParam("id") long id){
-
-        return "redirect:/Admin/QuanLySanPham";
+    public String delete(@RequestParam("id") long id,@RequestParam("page") String page){
+        productService.delete(id);
+        return "redirect:/Admin/QuanLySanPham?page="+page;
     }
 }

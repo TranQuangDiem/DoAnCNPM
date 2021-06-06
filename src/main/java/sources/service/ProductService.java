@@ -20,6 +20,9 @@ public class ProductService {
     public void save(Product product){
         productDAO.save(product);
     }
+    public void delete(long id){
+        productDAO.deleteById(id);
+    }
     public Product findId(long id){
         return productDAO.findId(id);
     }
@@ -115,4 +118,5 @@ public class ProductService {
     public List<String> getMausac(){
         return productDAO.getByMausac();
     }
+
 }

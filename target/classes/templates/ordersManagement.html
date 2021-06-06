@@ -182,8 +182,8 @@
                                 <div class="default-select" id="default-select_2" style="width: 200px">
                                     <select th:onchange="'timtheo(this,'+${session.user.getId()}+')'">
                                         <option value="all" style="width: 100px !important">Tất cả</option>
-                                        <option value="Chờ xác nhận" style="width: 100px
-                                            !important">Chờ xác nhận</option>
+                                        <option value="Đang xử lý" style="width: 100px
+                                            !important">Đang xử lý</option>
                                         <option value="Đang giao" style="width: 100px !important">Đang giao</option>
                                         <option value="Đã giao" style="width: 100px !important">Đã giao</option>
                                         <option value="Đã hủy" style="width: 100px !important">Đã hủy</option>
@@ -207,7 +207,7 @@
                                             <span th>03/06/2021</span>
                                         </div>
                                         <div class="currentStatus">
-                                            <span th:text="${donhang.getTinhtrang()}">Chờ xác nhận</span>
+                                            <span id="tinhtrang" th:text="${donhang.getTinhtrang()}">Chờ xác nhận</span>
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +258,7 @@
                                         </div>
                                         <div class="buttonCancel">
                                             <div class="">
-                                                <button href="#" class="genric-btn primary">Hủy</button>
+                                                <button th:onclick="'huy('+${donhang.getId()}+')'" id="huy" class="genric-btn primary" th:if="${donhang.getTinhtrang().equals('Đang xử lý')}"><span id="giatributton">Hủy</span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -361,13 +361,15 @@
                         '                                        <div class="prices">\n' +
                         '                                            <div class="totalPrices">\n' +
                         '                                                <span>Tổng số tiền:</span>\n' +
-                        '                                                <span class="price">'+hoadon[i].price+'</span>\n' +
+                        '                                                <span class="price">'+hoadon[i].price+' vnd</span>\n' +
                         '                                            </div>\n' +
                         '                                        </div>\n' +
                         '                                        <div class="buttonCancel">\n' +
-                        '                                            <div class="">\n' +
-                        '                                                <button href="#" class="genric-btn primary">Hủy</button>\n' +
-                        '                                            </div>\n' +
+                        '                                            <div class="">\n';
+                    if(hoadon[i].tinhtrang=='Đang xử lý'){
+                       result+= '                                                <button onclick="huy('+hoadon[i].id+')" id="huy" class="genric-btn primary"><span id="giatributton">Hủy</span></button>\n';
+                    }
+                        result+='                                            </div>\n' +
                         '                                        </div>\n' +
                         '                                    </div>\n' +
                         '                                </div>\n' +
@@ -376,7 +378,20 @@
                 document.getElementById("hienthi").innerHTML=result;
             }
         })
-
+    }
+    function huy(id) {
+        var thongbao=confirm("bạn chắc chắn muốn hủy đơn hàng này");
+        if (thongbao) {
+            $.ajax({
+                url: "/QuanLyDonHang/Huy/" + id,
+                success: function (data) {
+                    document.getElementById('giatributton').innerHTML='Đã hủy';
+                    document.getElementById('huy').style.background = '#c1c1c1';
+                    document.getElementById('huy').disabled = true;
+                    document.getElementById('tinhtrang').innerHTML = 'Đã hủy';
+                }
+            })
+        }
     }
 </script>
 </body>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Layout - Voler Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="../static/assets/css/quanLyNTD.css">
-    <link rel="stylesheet" href="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="../static/assets/css/app.css">
-    <link rel="shortcut icon" href="../static/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/quanLyNTD.css">
+    <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
 </head>
 <style>
     .thumbnail {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         position: relative;
     }
 
@@ -25,8 +25,8 @@
 
     .thumbnail a {
         /* display: block; */
-        width: 10px;
-        height: 10px;
+        width: 50px;
+        height: 50px;
         position: absolute;
         top: 3px;
         right: 3px;
@@ -36,9 +36,8 @@
 </style>
 <body>
 <div id="app">
-
+    <th:block th:include="/menu.html"></th:block>
     <div id="main">
-
         <div class="main-content container-fluid">
             <div class="page-title">
                 <div class="row">
@@ -55,61 +54,59 @@
                         </nav>
                     </div>
                 </div>
-
             </div>
-
-
             <!-- // Basic multiple Column Form section start -->
             <section id="multiple-column-form">
                 <div class="row match-height">
                     <div class="col-12">
                         <div class="card">
-
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form class="form">
+                                    <form class="form" method="POST" modelAttribute="myUploadForm"
+                                          th:action="@{/Admin/QuanLySanPham/Sua}" enctype="multipart/form-data">
                                         <div class="row">
+                                            <input style="display: none" name="id" th:value="${product.get().getId()}" />
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Tên sản phẩm</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                           name="ten-column" value="Bàn uống nước">
+                                                    <input type="text" id="ten" class="form-control"
+                                                           name="ten" th:value="${product.get().getTen()}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Loại</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                           value="Bàn" name="loai-column">
+                                                    <input type="text" id="loai" class="form-control"
+                                                           th:value="${product.get().getLoai()}" name="loai">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Màu sắc</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                           value="Trắng kem" name="mausac-column">
+                                                    <input type="text" id="mausac" class="form-control"
+                                                           th:value="${product.get().getMausac()}" name="mausac">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Giá</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                           value="1222222" name="gia-column">
+                                                    <input type="text" id="gia" class="form-control"
+                                                           th:value="${product.get().getGia()}" name="gia">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Kích thước</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                           value="D1965 - R835 - C805" name="gia-column">
+                                                    <input type="text" id="kichthuoc" class="form-control"
+                                                           th:value="${product.get().getKichthuoc()}" name="kichthuoc">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Số lượng</label>
-                                                    <input type="number" id="first-name-column" class="form-control"
-                                                           value="10" name="gia-column">
+                                                    <input type="number" id="soluong" class="form-control"
+                                                           th:value="${product.get().getSoluong()}" name="soluong">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
@@ -118,12 +115,14 @@
                                                     <div>
                                                         <div class="" style="display: flex;flex-flow: row nowrap;">
                                                             <div class="primary-switch">
-                                                                <input type="checkbox" id="default-switch">
-                                                                <label for="default-switch">IsHot</label>
+                                                                <input th:if="${product.get().isTrangthaiHot()}" type="checkbox" name="trangthaiHot" checked id="trangthaiHot">
+                                                                <input th:if="${!product.get().isTrangthaiHot()}" type="checkbox" name="trangthaiHot" id="trangthaiHot">
+                                                                <label for="trangthaiHot">IsHot</label>
                                                             </div>
                                                             <div class="primary-switch" style="margin-left: 10px;">
-                                                                <input type="checkbox" id="default-switch">
-                                                                <label for="default-switch">IsSale</label>
+                                                                <input th:if="${product.get().isTrangthaiSale()}" type="checkbox" name="trangthaiSale" id="trangthaiSale" checked>
+                                                                <input th:if="${!product.get().isTrangthaiSale()}" type="checkbox" name="trangthaiSale" id="trangthaiSale">
+                                                                <label for="trangthaiSale">IsSale</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -132,22 +131,22 @@
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Detph</label>
-                                                    <input type="number" id="first-name-column" class="form-control"
-                                                           value="10" name="detph-column">
+                                                    <input type="number" id="detph" class="form-control"
+                                                           th:value="${product.get().getDetph()}" name="detph">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Height</label>
-                                                    <input type="number" id="first-name-column" class="form-control"
-                                                           value="10" name="height-column">
+                                                    <input type="number" id="height" class="form-control"
+                                                           th:value="${product.get().getHeight()}" name="height">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Width</label>
-                                                    <input type="number" id="first-name-column" class="form-control"
-                                                           value="10" name="width-column">
+                                                    <input type="number" id="width" class="form-control"
+                                                           th:value="${product.get().getWidth()}" name="width">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
@@ -155,20 +154,18 @@
                                                     <label for="first-name-column">Hình ảnh</label>
                                                     <div style="display: flex;flex-flow: row nowrap; margin: 2px;">
                                                         <div class="thumbnail">
-                                                            <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"
-                                                                 style="height: 70px;width: 70px;">
+                                                            <img id="output" th:src="${product.get().getImg()}"/>
                                                         </div>
                                                     </div>
-                                                    <button type="submit"
-                                                            class="btn btn-primary mr-1 mb-1">Thêm</button>
+                                                    <input onchange="loadFile(event)" type="file" name="fileDatas" />
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-column">Chi tiết</label>
                                                     <textarea type="text" id="first-name-column"
-                                                              class="form-control" name="info-column"
-                                                              style="height: 120px;">Một chiếc bàn làm việc đẹp với phong cách hiện đại bởi đường nét hoa văn đơn giản, ít chi tiết,không cầu kỳ nhưng vẫn sang trọng là điều mà mọi người đều mong muốn tìm kiếm.
+                                                              class="form-control" name="chitiet"
+                                                              style="height: 120px;" th:utext="${product.get().getTen()}">Một chiếc bàn làm việc đẹp với phong cách hiện đại bởi đường nét hoa văn đơn giản, ít chi tiết,không cầu kỳ nhưng vẫn sang trọng là điều mà mọi người đều mong muốn tìm kiếm.
                                                         </textarea>
                                                 </div>
                                             </div>
@@ -178,8 +175,8 @@
                                             <div class="col-12 d-flex justify-content-end">
                                                 <button type="submit"
                                                         class="btn btn-primary mr-1 mb-1">Save</button>
-                                                <button type="submit"
-                                                        class="btn btn-primary mr-1 mb-1">Exit</button>
+                                                <a th:href="@{/Admin/QuanLySanPham}"
+                                                   class="btn btn-primary mr-1 mb-1">Exit</a>
                                             </div>
                                         </div>
                                     </form>
@@ -205,10 +202,16 @@
         </footer>
     </div>
 </div>
-<script src="../static/assets/js/feather-icons/feather.min.js"></script>
-<script src="../static/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="../static/assets/js/app.js"></script>
-
-<script src="../static/assets/js/main.js"></script>
+<script>
+    var loadFile = function (event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+            // document.getElementById('img').value = "" + reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };// code display image upload
+</script>
 </body>
 </html>

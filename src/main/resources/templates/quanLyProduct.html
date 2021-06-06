@@ -17,7 +17,6 @@
 <div id="app">
     <th:block th:include="/menu.html"></th:block>
     <div id="main">
-
         <div class="main-content container-fluid">
             <div class="page-title">
                 <div class="row">
@@ -33,10 +32,7 @@
                         </nav>
                     </div>
                 </div>
-
             </div>
-
-
             <!-- Hoverable rows start -->
             <div class="row" id="table-hover-row">
                 <div class="col-12">
@@ -63,20 +59,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-
                                     <tr th:each="product : ${products}">
                                         <td class="text-bold" th:text="${product.getId()}">1</td>
                                         <td class="text-bold" th:text="${product.getTen()}">Bàn uống nước</td>
                                         <td class="text-bold">
                                             <div style="display: flex;flex-flow: row nowrap;margin: 2px;">
-                                                <img th:src="${product.getImg()}"
+                                                <img th:src="@{${product.getImg()}}"
                                                      style="width: 50px;height: 50px;">
-<!--                                                <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"-->
-<!--                                                     style="width: 50px;height: 50px;">-->
-<!--                                                <img src="http://www.nhaxinh.com/photo/4577/ban-nuoc-rumba.jpg"-->
-<!--                                                     style="width: 50px;height: 50px;">-->
                                             </div>
-
                                         </td>
                                         <td class="text-bold" th:text="${product.getGia()}">20000</td>
                                         <td class="text-bold" th:text="${product.getLoai()}">Bàn</td>
@@ -86,14 +76,14 @@
 <!--                                            </a>-->
 <!--                                        </td>-->
                                         <td class="text-bold">
-                                            <a class="btn green mr0 btn-search-text-single btnSearchMore">
+                                            <a th:href="@{/Admin/QuanLySanPham/Sua(id=${product.getId()})}" class="btn green mr0 btn-search-text-single btnSearchMore">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a th:href="@{/Admin/QuanLySanPham/Delete(id=${product.getId()},page=${products.number+1})}" class="btn green mr0 btn-search-text-single btnSearchMore">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
-
-
-
                                     </tbody>
                                 </table>
                             </div>
@@ -108,21 +98,16 @@
                     <li class="page-item" th:if="${pagePrivious!=0}"><a class="page-link"  th:href="@{/Admin/QuanLySanPham(page=${pagePrivious})}">Prev</a></li>
                     <th:block th:each="pageNumber : ${pageNumbers}">
                     <li th:class="${pageNumber==products.number + 1} ? 'page-item'+' active'"><a class="page-link" th:href="@{/Admin/QuanLySanPham(page=${pageNumber})}" th:text="${pageNumber}">1</a></li>
-<!--                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
                     </th:block>
                     <li class="page-item" th:if="${pageMax!=0}"><a class="page-link" th:href="@{/Admin/QuanLySanPham(page=${pageMax})}">Next</a></li>
                 </ul>
             </nav>
         </div>
-
-
     </div>
 </div>
-<script src="assets/js/feather-icons/feather.min.js"></script>
-<script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="assets/js/app.js"></script>
-
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/feather-icons/feather.min.js"></script>
+<script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -206,4 +206,15 @@ public class PaymentController {
         result.add(chiTietDonHangService.findByMahoadon_IdUser_IdAndMahoadon_Tinhtrang(id,tinhtrang));
         return result;
     }
+    @GetMapping("/QuanLyDonHang/Huy/{id}")
+    @ResponseBody
+    public List<String> huydonhang(@PathVariable("id") long id) throws Exception {
+        DonHang donHang = donHangService.findById(id);
+        donHang.setTinhtrang("Đã hủy");
+        donHangService.update(donHang);
+        List<String> result = new ArrayList<>();
+        result.add("Đã hủy");
+        return result;
+
+    }
 }

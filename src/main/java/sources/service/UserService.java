@@ -5,8 +5,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -20,7 +18,6 @@ import sources.model.SendMail;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -91,6 +88,7 @@ public void deleteQuenPass(QuenMatKhau quenMatKhau){
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         // Kiểm tra xem user có tồn tại trong database không?
+
         User user = userDAO.findByEmail(email);
         if (user!=null) {
             session.setAttribute("user", user);
