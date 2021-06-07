@@ -22,4 +22,5 @@ public interface DonHangDAO extends JpaRepository<DonHang,Long> {
     List<DonHang> findByIdUser_Id(long idUser);
     List<DonHang> findByIdUser_IdAndTinhtrang(long idUser,String tinhtrang);
     DonHang findById(long id);
+    List<DonHang> findAllByOrderByDateDesc();
 }

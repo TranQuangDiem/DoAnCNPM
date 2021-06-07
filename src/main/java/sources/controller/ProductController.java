@@ -2,17 +2,18 @@ package sources.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
+import sources.entity.DanhGia;
 import sources.entity.Product;
 import sources.model.MyUploadForm;
+import sources.service.DanhGiaService;
 import sources.service.ProductService;
+import sources.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
@@ -27,12 +28,17 @@ import java.util.stream.IntStream;
 public class ProductController {
     @Autowired
     ProductService productService;
+    @Autowired
+    DanhGiaService danhGiaService;
+    @Autowired
+    UserService userService;
     private static final Path CURRENT_FOLDER = Paths.get(System.getProperty("user.dir"));
     @GetMapping("/chitietsanpham")
     public String chitiet(Model model, @RequestParam("id") long id) {
         if (productService.existsById(id)) {
             model.addAttribute("product", productService.findById(id));
             model.addAttribute("productSale", productService.findBySaleLimit(true, 4));
+            model.addAttribute("danhgias",danhGiaService.findByIdproduct_Id(id));
             return "single-product";
         } else {
             return "redirect:/";
@@ -240,5 +246,20 @@ public class ProductController {
     public String delete(@RequestParam("id") long id,@RequestParam("page") String page){
         productService.delete(id);
         return "redirect:/Admin/QuanLySanPham?page="+page;
+    }
+    @GetMapping("/DanhGia/{sosao}/{binhluan}/{idUser}/{idSanpham}")
+    @ResponseBody
+    public List<DanhGia> danhGia(@PathVariable("sosao") int sosao,@PathVariable("binhluan") String binhluan,@PathVariable("idUser") long idUser, @PathVariable("idSanpham") long idSanpham){
+        DanhGia danhGia = new DanhGia();
+        danhGia.setSosao(sosao);
+        danhGia.setDanhgia(binhluan);
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
+        danhGia.setDate(date);
+        danhGia.setIduser(userService.findById(idUser));
+        danhGia.setIdproduct(productService.findId(idSanpham));
+        danhGiaService.save(danhGia);
+        return danhGiaService.findByIdproduct_Id(idSanpham);
+
     }
 }

@@ -30,7 +30,7 @@ public class DonHangService {
         donHangDAO.save(donHang);
     }
     public List<DonHang> findAll(){
-        return donHangDAO.findAll();
+        return donHangDAO.findAllByOrderByDateDesc();
     }
     public List<DonHang> findByIdUser (long idUser){
         return donHangDAO.findByIdUser_Id(idUser);
@@ -39,7 +39,7 @@ public class DonHangService {
         return donHangDAO.findByIdUser_IdAndTinhtrang(idUser,tinhtrang);
     }
     public Page<DonHang> findPaginated(Pageable pageable) {
-        List<DonHang> donhang =donHangDAO.findAll();
+        List<DonHang> donhang =donHangDAO.findAllByOrderByDateDesc();
         int pageSize = pageable.getPageSize();
         int currentPage = pageable.getPageNumber();
         int startItem = currentPage * pageSize;

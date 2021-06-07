@@ -59,7 +59,7 @@
 
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="donhang">
 
                                     <tr th:each="donhang : ${donhangs}">
                                         <td class="text-bold" th:text="${donhang.getId()}">1</td>
@@ -70,9 +70,15 @@
                                         <td class="text-bold" th:text="${donhang.getLoaithanhtoan()}">COD</td>
                                         <td class="text-bold" th:text="${donhang.getDate()}">1/1/2021</td>
 <!--                                        <td class="text-bold" th:text="${donhang.getGhichu()}">10/1/2021</td>-->
-                                        <td class="text-bold" th:text="${donhang.getTinhtrang()}"></td>
-
-
+                                        <td class="text-bold" th:if="${donhang.getTinhtrang().equals('Đã hủy')}" th:text="${donhang.getTinhtrang()}"></td>
+                                        <td class="text-bold" th:if="${!donhang.getTinhtrang().equals('Đã hủy')}">
+                                            <select th:onchange="'updateDonHang(this,'+${donhang.getId()}+')'">
+                                                <option th:value="${donhang.getTinhtrang()}" th:text="${donhang.getTinhtrang()}"></option>
+                                                <option value="Đang xử lý">Đang xử lý</option>
+                                                <option value="Đang giao">Đang giao</option>
+                                                <option value="Đã giao">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
 
                                     </tbody>
@@ -98,10 +104,39 @@
 
     </div>
 </div>
-<script src="/assets/js/feather-icons/feather.min.js"></script>
-<script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="/assets/js/app.js"></script>
+<script src="/js/jquery-1.12.1.min.js"></script>
+<script>
+    function updateDonHang(object,id) {
+        var tinhtrang = object.value;
+        var result = '';
+        $.ajax({
+            url:"/Admin/Update/"+tinhtrang+"/"+id,
+            success:function (data) {
+                // for (var i=0; i<data.length;i++){
+                //     result+=' <tr th:each="donhang : ${donhangs}">\n' +
+                //         '                                        <td class="text-bold">'+data[i].id+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getName()}">'+data[i].name+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getPrice()}">'+data[i].price+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getPhone()}">'+data[i].phone+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getAddress()}">'+data[i].address+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getLoaithanhtoan()}">'+data[i].loaithanhtoan+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getDate()}">'+data[i].date+'</td>\n' +
+                //         '                                        <td class="text-bold" th:text="${donhang.getTinhtrang()}">\n' +
+                //         '                                            <select th:onchange="\'updateDonHang(\'+${donhangs.number+1}+\',this)\'">\n' +
+                //         '                                                <option th:value="${donhang.getTinhtrang()}" th:text="${donhang.getTinhtrang()}"></option>\n' +
+                //         '                                                <option value="Đang xử lý">Đang xử lý</option>\n' +
+                //         '                                                <option value="Đang giao">Đang giao</option>\n' +
+                //         '                                                <option value="Đã giao">Đã giao</option>\n' +
+                //         '                                                <option value="Đã hủy">Đã Hủy</option>\n' +
+                //         '                                            </select>\n' +
+                //         '                                        </td>\n' +
+                //         '                                    </tr>';
+                    confirm("update thành công");
+                // }  // error:
+            },
 
-<script src="/assets/js/main.js"></script>
+        })
+    }
+</script>
 </body>
 </html>

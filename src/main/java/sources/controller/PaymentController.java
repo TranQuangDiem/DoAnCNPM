@@ -217,4 +217,12 @@ public class PaymentController {
         return result;
 
     }
+    @GetMapping("/Admin/Update/{tinhtrang}/{id}")
+    @ResponseBody
+    public List<DonHang> update(@PathVariable("tinhtrang") String tinhtrang,@PathVariable("id") long id){
+        DonHang donHang = donHangService.findById(id);
+        donHang.setTinhtrang(tinhtrang);
+        donHangService.update(donHang);
+        return donHangService.findAll();
+    }
 }

@@ -2,460 +2,492 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>aranoz</title>
-  <link rel="icon" href="img/favicon.png">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- animate CSS -->
-  <link rel="stylesheet" href="css/animate.css">
-  <!-- owl carousel CSS -->
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/lightslider.min.css">
-  <!-- font awesome CSS -->
-  <link rel="stylesheet" href="css/all.css">
-  <!-- flaticon CSS -->
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/themify-icons.css">
-  <!-- font awesome CSS -->
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <!-- style CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>aranoz</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/lightslider.min.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .review_item .media .media-body .name {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .review_item .media .media-body .name .date {
+            margin-left: 5px;
+        }
+
+        /* rating */
+
+        @import url(/css/font-awesome.min.css);
+
+        fieldset, label {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+
+        /****** Style Star Rating Widget *****/
+
+        .rating {
+            border: none;
+            float: left;
+        }
+
+        .rating > input {
+            display: none;
+        }
+
+        .rating > label:before {
+            margin: 5px;
+            font-size: 1.25em;
+            font-family: FontAwesome;
+            display: inline-block;
+            content: "\f005";
+        }
+
+        .rating > .half:before {
+            content: "\f089";
+            position: absolute;
+        }
+
+        .rating > label {
+            color: #ddd;
+            float: right;
+        }
+
+        /***** CSS Magic to Highlight Stars on Hover *****/
+
+        .rating > input:checked ~ label, /* show gold star when clicked */
+        .rating:not(:checked) > label:hover, /* hover current star */
+        .rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+
+        /* hover previous stars in list */
+
+        .rating > input:checked + label:hover, /* hover current star when changing rating */
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+        .rating > input:checked ~ label:hover ~ label {
+            color: #FFED85;
+        }
+
+        /* end rating */
+    </style>
 </head>
 
 <body>
-   <!--::header part start::-->
-   <th:block th:include="/header.html"></th:block>
-    <!-- Header part end-->
+<!--::header part start::-->
+<th:block th:include="/header.html"></th:block>
+<!-- Header part end-->
 
-  
-  <!--================End Home Banner Area =================-->
 
-  <!--================Single Product Area =================-->
-  <div class="product_image_area section_padding">
+<!--================End Home Banner Area =================-->
+
+<!--================Single Product Area =================-->
+<div class="product_image_area section_padding">
     <div class="container">
-      <div class="row s_product_inner justify-content-between">
-        <div class="col-lg-7 col-xl-7">
-          <div class="product_slider_img">
-            <div id="vertical">
-              <div th:data-thumb="${product.get().getImg()}">
-                <img th:src="${product.get().getImg()}" />
-              </div>
-              <div th:data-thumb="${product.get().getImg()}">
-                <img th:src="${product.get().getImg()}" />
-              </div>
-              <div th:data-thumb="${product.get().getImg()}">
-                <img th:src="${product.get().getImg()}" />
-              </div>
-              <div th:data-thumb="${product.get().getImg()}">
-                <img th:src="${product.get().getImg()}" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 col-xl-4">
-          <div class="s_product_text">
-            <h5>previous <span>|</span> next</h5>
-            <h3 th:text="${product.get().getTen()}"></h3>
-            <h2 th:text="${product.get().getGia()}+ ' vnd' "></h2>
-            <ul class="list">
-              <li>
-                <span>-Loại</span><a th:href="@{/danhsachsanpham(loai=${product.get().getLoai()})}" th:text="' : '+${product.get().getLoai()}">
-                   : unknow</a>
-              </li>
-              <li>
-                <span>-Màu sắc</span><a th:href="@{/danhsachsanpham(mausac=${product.get().getMausac()})}" th:text="' : '+${product.get().getMausac()}">  : unknow</a>
-              </li>
-            </ul>
-            <p th:text="${product.get().getChitiet()}">
-              First replenish living. Creepeth image image. Creeping can't, won't called.
-              Two fruitful let days signs sea together all land fly subdue
-            </p>
-            <div class="card_area d-flex justify-content-between align-items-center">
-<!--              <div class="product_count">-->
-<!--                <span class="inumber-decrement"> <i class="ti-minus"></i></span>-->
-<!--                <input class="input-number" type="text" value="1" min="0" th:max="${product.get().getSoluong()}">-->
-<!--                <span class="number-increment"> <i class="ti-plus"></i></span>-->
-<!--              </div>-->
-              <button id="addcart" onclick="addItem()" class="btn_3">Thêm vào giỏ hàng</button>
-
-              <button  class="like_us"> <i class="ti-heart"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--================End Single Product Area =================-->
-
-  <!--================Product Description Area =================-->
-  <section class="product_description_area">
-    <div class="container">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-            aria-selected="true">Description</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-            aria-selected="false">Specification</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-            aria-selected="false">Reviews</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <p th:text="${product.get().getChitiet()}"></p>
-        </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class="table-responsive">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <h5>Width</h5>
-                  </td>
-                  <td>
-                    <h5 th:text="${product.get().getWidth()}"></h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Height</h5>
-                  </td>
-                  <td>
-                    <h5 th:text="${product.get().getHeight()}"></h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Depth</h5>
-                  </td>
-                  <td>
-                    <h5 th:text="${product.get().getDetph()}"></h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Weight</h5>
-                  </td>
-                  <td>
-                    <h5>52gm</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Số lượng còn lại</h5>
-                  </td>
-                  <td>
-                    <h5 th:text="${product.get().getSoluong()}"></h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Freshness Duration</h5>
-                  </td>
-                  <td>
-                    <h5>03days</h5>
-                  </td>
-                </tr>
-<!--                <tr>-->
-<!--                  <td>-->
-<!--                    <h5>When packeting</h5>-->
-<!--                  </td>-->
-<!--                  <td>-->
-<!--                    <h5>Without touch of hand</h5>-->
-<!--                  </td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                  <td>-->
-<!--                    <h5>Each Box contains</h5>-->
-<!--                  </td>-->
-<!--                  <td>-->
-<!--                    <h5>60pcs</h5>-->
-<!--                  </td>-->
-<!--                </tr>-->
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="row total_rate">
-                <div class="col-6">
-                  <div class="box_total">
-                    <h5>Overall</h5>
-                    <h4>4.0</h4>
-                    <h6>(03 Reviews)</h6>
-                  </div>
+        <div class="row s_product_inner justify-content-between">
+            <div class="col-lg-7 col-xl-7">
+                <div class="product_slider_img">
+                    <div id="vertical">
+                        <div th:data-thumb="${product.get().getImg()}">
+                            <img th:src="${product.get().getImg()}"/>
+                        </div>
+                        <div th:data-thumb="${product.get().getImg()}">
+                            <img th:src="${product.get().getImg()}"/>
+                        </div>
+                        <div th:data-thumb="${product.get().getImg()}">
+                            <img th:src="${product.get().getImg()}"/>
+                        </div>
+                        <div th:data-thumb="${product.get().getImg()}">
+                            <img th:src="${product.get().getImg()}"/>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6">
-                  <div class="rating_list">
-                    <h3>Based on 3 Reviews</h3>
+            </div>
+            <div class="col-lg-5 col-xl-4">
+                <div class="s_product_text">
+                    <h5>previous <span>|</span> next</h5>
+                    <h3 th:text="${product.get().getTen()}"></h3>
+                    <h2 th:text="${product.get().getGia()}+ ' vnd' "></h2>
                     <ul class="list">
-                      <li>
-                        <a href="#">5 Star
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i> 01</a>
-                      </li>
-                      <li>
-                        <a href="#">4 Star
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i> 01</a>
-                      </li>
-                      <li>
-                        <a href="#">3 Star
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i> 01</a>
-                      </li>
-                      <li>
-                        <a href="#">2 Star
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i> 01</a>
-                      </li>
-                      <li>
-                        <a href="#">1 Star
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i> 01</a>
-                      </li>
+                        <li>
+                            <span>-Loại</span><a th:href="@{/danhsachsanpham(loai=${product.get().getLoai()})}"
+                                                 th:text="' : '+${product.get().getLoai()}">
+                            : unknow</a>
+                        </li>
+                        <li>
+                            <span>-Màu sắc</span><a th:href="@{/danhsachsanpham(mausac=${product.get().getMausac()})}"
+                                                    th:text="' : '+${product.get().getMausac()}"> : unknow</a>
+                        </li>
                     </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="review_list">
-                <div class="review_item">
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="../static/img/product/single-product/review-1.png" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <h4>Blake Ruiz</h4>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
-                <div class="review_item">
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="../static/img/product/single-product/review-2.png" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <h4>Blake Ruiz</h4>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
-                <div class="review_item">
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="../static/img/product/single-product/review-3.png" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <h4>Blake Ruiz</h4>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="review_box">
-                <h4>Add a Review</h4>
-                <p>Your Rating:</p>
-                <ul class="list">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-star"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-star"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-star"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-star"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-star"></i>
-                    </a>
-                  </li>
-                </ul>
-                <p>Outstanding</p>
-                <form class="row contact_form" action="contact_process.php" method="post" novalidate="novalidate">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="name" placeholder="Your Full name" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="email" class="form-control" name="email" placeholder="Email Address" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="number" placeholder="Phone Number" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea class="form-control" name="message" rows="1" placeholder="Review"></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-12 text-right">
-                    <button type="submit" value="submit" class="btn_3">
-                      Submit Now
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================End Product Description Area =================-->
+                    <p th:text="${product.get().getChitiet()}">
+                        First replenish living. Creepeth image image. Creeping can't, won't called.
+                        Two fruitful let days signs sea together all land fly subdue
+                    </p>
+                    <div class="card_area d-flex justify-content-between align-items-center">
+                        <!--              <div class="product_count">-->
+                        <!--                <span class="inumber-decrement"> <i class="ti-minus"></i></span>-->
+                        <!--                <input class="input-number" type="text" value="1" min="0" th:max="${product.get().getSoluong()}">-->
+                        <!--                <span class="number-increment"> <i class="ti-plus"></i></span>-->
+                        <!--              </div>-->
+                        <button id="addcart" onclick="addItem()" class="btn_3">Thêm vào giỏ hàng</button>
 
-  <!-- product_list part start-->
-  <section class="product_list best_seller">
+                        <button class="like_us"><i class="ti-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--================End Single Product Area =================-->
+
+<!--================Product Description Area =================-->
+<section class="product_description_area">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-12">
-          <div class="section_tittle text-center">
-            <h2>Sản phẩm đang sale <span>shop</span></h2>
-          </div>
-        </div>
-      </div>
-      <div class="row align-items-center justify-content-between">
-        <div class="col-lg-12">
-          <div class="best_product_slider owl-carousel">
-            <div class="single_product_item" th:each="product : ${productSale}">
-              <a th:href="@{/chitietsanpham(id=${product.getId()})}">
-                <img th:src="${product.getImg()}" alt="">
-              </a>
-              <div class="single_product_text">
-                <h4 th:text="${product.getTen()}"></h4>
-                <h3 th:text="${product.getGia()}+ ' VNĐ'"></h3>
-                <a th:onclick="'addItem('+${product.getId()}+')'"  class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-              </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                   aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                   aria-controls="profile"
+                   aria-selected="false">Specification</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab"
+                   aria-controls="review"
+                   aria-selected="false">Reviews</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <p th:text="${product.get().getChitiet()}"></p>
             </div>
-          </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <h5>Width</h5>
+                            </td>
+                            <td>
+                                <h5 th:text="${product.get().getWidth()}"></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Height</h5>
+                            </td>
+                            <td>
+                                <h5 th:text="${product.get().getHeight()}"></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Depth</h5>
+                            </td>
+                            <td>
+                                <h5 th:text="${product.get().getDetph()}"></h5>
+                            </td>
+                        </tr>
+                        <!--                <tr>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>Weight</h5>-->
+                        <!--                  </td>-->
+                        <!--                  <td>-->
+                        <!--                    <h5 th:text="${product.get().getW}">52gm</h5>-->
+                        <!--                  </td>-->
+                        <!--                </tr>-->
+                        <tr>
+                            <td>
+                                <h5>Số lượng còn lại</h5>
+                            </td>
+                            <td>
+                                <h5 th:text="${product.get().getSoluong()}"></h5>
+                            </td>
+                        </tr>
+                        <!--                <tr>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>Freshness Duration</h5>-->
+                        <!--                  </td>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>03days</h5>-->
+                        <!--                  </td>-->
+                        <!--                </tr>-->
+                        <!--                <tr>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>When packeting</h5>-->
+                        <!--                  </td>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>Without touch of hand</h5>-->
+                        <!--                  </td>-->
+                        <!--                </tr>-->
+                        <!--                <tr>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>Each Box contains</h5>-->
+                        <!--                  </td>-->
+                        <!--                  <td>-->
+                        <!--                    <h5>60pcs</h5>-->
+                        <!--                  </td>-->
+                        <!--                </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="review_list" id="danh-sach-danh-gia">
+                            <div class="review_item" th:each="danhgia: ${danhgias}">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div class="name">
+                                            <h4 class="ten"  th:text="${danhgia.getIduser().getUsername()}">Blake Ruiz</h4>
+                                            <h5 class="date" th:text="${danhgia.getDate()}">6/6/2021</h5>
+                                        </div>
+                                      <th:block th:if="${danhgia.getSosao()==5}">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                      </th:block>
+                                      <th:block th:if="${danhgia.getSosao()==4}">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                      </th:block>
+                                      <th:block th:if="${danhgia.getSosao()==3}">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                      </th:block>
+                                      <th:block th:if="${danhgia.getSosao()==2}">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                      </th:block>
+                                      <th:block th:if="${danhgia.getSosao()==1}">
+                                        <i class="fa fa-star"></i>
+                                      </th:block>
+                                    </div>
+                                </div>
+                                <p th:text="${danhgia.getDanhgia()}">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="review_box">
+
+                            <div class="row contact_form">
+                                <div class="" style="display: flex; flex-flow: column; margin-left: 10px;">
+                                    <h4>Add a Review</h4>
+
+                                    <div style="display: flex;flex-flow: row nowrap;">
+                                        <p>Your Rating:</p>
+                                        <fieldset class="rating">
+                                            <input onclick="getSao(this)" type="radio" id="star5" name="rating" value="5"/><label class="full"
+                                                                                                           for="star5"
+                                                                                                           title="Awesome - 5 stars"></label>
+                                            <input onclick="getSao(this)" type="radio" id="star4" name="rating" value="4"/><label class="full"
+                                                                                                           for="star4"
+                                                                                                           title="Pretty good - 4 stars"></label>
+                                            <input onclick="getSao(this)" type="radio" id="star3" name="rating" value="3"/><label class="full"
+                                                                                                           for="star3"
+                                                                                                           title="Meh - 3 stars"></label>
+                                            <input onclick="getSao(this)" type="radio" id="star2" name="rating" value="2"/><label class="full"
+                                                                                                           for="star2"
+                                                                                                           title="Kinda bad - 2 stars"></label>
+                                            <input onclick="getSao(this)" type="radio" id="star1" name="rating" value="1"/><label class="full"
+                                                                                                           for="star1"
+                                                                                                           title="Sucks big time - 1 star"></label>
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                      <p style="color: red" th:if="${session.user==null}">Vui lòng Đăng Nhập để đánh giá</p>
+                      <textarea id="binhluan" class="form-control" name="comment" placeholder="Your Comment"
+                                style="height: 100px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right" th:if="${session.user!=null}">
+                                    <button th:onclick="'danhgia('+${session.user.getId()}+','+${product.get().getId()}+')'" class="btn_3">
+                                        Submit Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-   <input id="idproduct" style="display: none" th:value="${product.get().getId()}"/>
-  <!-- product_list part end-->
+</section>
+<!--================End Product Description Area =================-->
 
-   <!--::footer_part start::-->
-   <th:block th:include="/footer.html"></th:block>
-   <!--::footer_part end::-->
+<!-- product_list part start-->
+<section class="product_list best_seller">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Sản phẩm đang sale <span>shop</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-12">
+                <div class="best_product_slider owl-carousel">
+                    <div class="single_product_item" th:each="product : ${productSale}">
+                        <a th:href="@{/chitietsanpham(id=${product.getId()})}">
+                            <img th:src="${product.getImg()}" alt="">
+                        </a>
+                        <div class="single_product_text">
+                            <h4 th:text="${product.getTen()}"></h4>
+                            <h3 th:text="${product.getGia()}+ ' VNĐ'"></h3>
+                            <a th:onclick="'addItem('+${product.getId()}+')'" class="add_cart">+ add to cart<i
+                                    class="ti-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<input id="idproduct" style="display: none" th:value="${product.get().getId()}"/>
+<!-- product_list part end-->
 
-   <!-- jquery plugins here-->
-   <!-- jquery -->
-   <script src="js/jquery-1.12.1.min.js"></script>
-   <!-- popper js -->
-   <script src="js/popper.min.js"></script>
-   <!-- bootstrap js -->
-   <script src="js/bootstrap.min.js"></script>
-   <!-- easing js -->
-   <script src="js/jquery.magnific-popup.js"></script>
-   <!-- swiper js -->
-   <script src="js/lightslider.min.js"></script>
-   <!-- swiper js -->
-   <script src="js/masonry.pkgd.js"></script>
-   <!-- particles js -->
-   <script src="js/owl.carousel.min.js"></script>
-   <script src="js/jquery.nice-select.min.js"></script>
-   <!-- slick js -->
-   <script src="js/slick.min.js"></script>
-   <script src="js/swiper.jquery.js"></script>
-   <script src="js/jquery.counterup.min.js"></script>
-   <script src="js/waypoints.min.js"></script>
-   <script src="js/contact.js"></script>
-   <script src="js/jquery.ajaxchimp.min.js"></script>
-   <script src="js/jquery.form.js"></script>
-   <script src="js/jquery.validate.min.js"></script>
-   <script src="js/mail-script.js"></script>
-   <script src="js/stellar.js"></script>
-   <!-- custom js -->
-   <script src="js/theme.js"></script>
-   <script src="js/custom.js"></script>
+<!--::footer_part start::-->
+<th:block th:include="/footer.html"></th:block>
+<!--::footer_part end::-->
+
+<!-- jquery plugins here-->
+<!-- jquery -->
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="js/lightslider.min.js"></script>
+<!-- swiper js -->
+<script src="js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="js/slick.min.js"></script>
+<script src="js/swiper.jquery.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/stellar.js"></script>
+<!-- custom js -->
+<script src="js/theme.js"></script>
+<script src="js/custom.js"></script>
 <script>
-  var id=document.getElementById('idproduct').value;
-  function addItem() {
-    $.ajax({
-      url: "/them?id=" +id,
-      header:{
-        Accept:"application/json; charset=utf-8","content-Type":"application/json; charset=utf-8"
-      },
-      success: function(data) {
-        document.getElementById('soluong').innerHTML = data;
-        // document.getElementById('addcart').innerHTML = "Đã thêm vào giỏ hàng";
-        // document.getElementById('addcart').disabled=true;
-      }
+    var id = document.getElementById('idproduct').value;
+
+    function addItem() {
+        $.ajax({
+            url: "/them?id=" + id,
+            header: {
+                Accept: "application/json; charset=utf-8", "content-Type": "application/json; charset=utf-8"
+            },
+            success: function (data) {
+                document.getElementById('soluong').innerHTML = data;
+                // document.getElementById('addcart').innerHTML = "Đã thêm vào giỏ hàng";
+                // document.getElementById('addcart').disabled=true;
+            }
+        })
+    }
+    var sosao = 5;
+    function getSao(object) {
+      sosao = object.value;
+    }
+    function danhgia(idUser,idProduct) {
+      var binhluan = document.getElementById('binhluan').value;
+      var result='';
+      console.log('sosao'+sosao+"binhluan"+binhluan+"idUser"+idUser+"idProduct"+idProduct)
+      $.ajax({
+        url:"/DanhGia/"+sosao+"/"+binhluan+"/"+idUser+"/"+idProduct,
+        success:function (data) {
+          for (var i=0; i<data.length; i++){
+            result+=' <div class="review_item">\n' +
+                    '                                <div class="media">\n' +
+                    '                                    <div class="media-body">\n' +
+                    '                                        <div class="name">\n' +
+                    '                                            <h4 class="ten">'+data[i].iduser.username+'</h4>\n' +
+                    '                                            <h5 class="date">'+data[i].date+'</h5>\n' +
+                    '                                        </div>\n';
+            if (data[i].sosao==5){
+              sosao=5;
+            }else if (data[i].sosao==4){
+              sosao=4;
+            }else if (data[i].sosao==3){
+              sosao=3;
+            }else if (data[i].sosao==2){
+              sosao=2;
+            }else if (data[i].sosao==1){
+              sosao=1;
+            }
+            for (var j=0; j<sosao;j++) {
+              result+='                                        <i class="fa fa-star"></i>\n';
+            }
+            result+='                                    </div>\n' +
+                    '                                </div>\n' +
+                    '                                <p>'+data[i].danhgia+'</p>\n' +
+                    '                            </div>';
+          }
+
+          document.getElementById('danh-sach-danh-gia').innerHTML=result;
+        }
       })
-}
+    }
 </script>
 </body>
 
