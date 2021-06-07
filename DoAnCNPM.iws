@@ -6,26 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/DAO/DonHangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/entity/DanhGia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/entity/DanhGia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/service/DonHangService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/quanLyDonHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/quanLyDonHang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/single-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/DAO/DonHangDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/PaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/entity/DanhGia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/entity/DanhGia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/service/DonHangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/quanLyDonHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/quanLyDonHang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/single-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/single-product.html" afterDir="false" />
+
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-=======
-    </list>
->>>>>>> 4ab93f9a10187433378a65bfb18ad183de79642c
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -190,15 +172,8 @@
       <workItem from="1622861648703" duration="3682000" />
       <workItem from="1622883866636" duration="7012000" />
       <workItem from="1622891141259" duration="2911000" />
-<<<<<<< HEAD
-      <workItem from="1622942030390" duration="4621000" />
-      <workItem from="1623038898301" duration="1286000" />
-      <workItem from="1623053209113" duration="4686000" />
-      <workItem from="1623064610615" duration="6770000" />
-=======
       <workItem from="1622942030390" duration="3517000" />
       <workItem from="1623036877548" duration="3823000" />
->>>>>>> 4ab93f9a10187433378a65bfb18ad183de79642c
     </task>
     <servers />
   </component>
