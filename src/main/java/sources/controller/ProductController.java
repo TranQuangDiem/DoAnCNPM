@@ -142,6 +142,7 @@ public class ProductController {
     @RequestMapping(value = "/Admin/QuanLySanPham/Sua", method = RequestMethod.POST)
     public String editSanPham(HttpServletRequest request,@RequestParam("id") long id, Model model,@ModelAttribute("myUploadForm") MyUploadForm myUploadForm) throws IOException {
         Product product = productService.findId(id);
+//        multipartFile cua spring su ly file cua spring
         MultipartFile[] fileDatas = myUploadForm.getFileDatas();
         if(!fileDatas[0].isEmpty()){
             return this.luuSp(request,model,myUploadForm,product);
@@ -211,6 +212,7 @@ public class ProductController {
         return "redirect:/Admin/QuanLySanPham";
     }
     private String luuSp(HttpServletRequest request, Model model, MyUploadForm myUploadForm,Product product) throws IOException {
+//        tao duong dan o static
         Path staticPath = Paths.get("static");
         Path imagePath = Paths.get("images");
         product.setTen(myUploadForm.getTen());
@@ -233,6 +235,7 @@ public class ProductController {
                 .resolve(imagePath).resolve(fileDatas.getOriginalFilename());
         try (OutputStream os = Files.newOutputStream(file)) {
             System.out.println(file.toString());
+//            luu file xuong folder static
             os.write(fileDatas.getBytes());
         }catch (Exception e){
             System.out.println(e.getMessage());

@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe1d78d6-d79f-4b6f-973e-d4224464e3c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sources/config/UserDetailFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoAnCNPM.iws" beforeDir="false" afterPath="$PROJECT_DIR$/DoAnCNPM.iws" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sources/model/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sources/model/CustomUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sources/model/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sources/model/CustomUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +65,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/backendShoppee" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
@@ -76,6 +86,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="DoAnCNPM" />
       <extension name="coverage">
@@ -174,6 +197,13 @@
       <workItem from="1622891141259" duration="2911000" />
       <workItem from="1622942030390" duration="3517000" />
       <workItem from="1623036877548" duration="3823000" />
+      <workItem from="1623596470626" duration="660000" />
+      <workItem from="1630483786000" duration="2723000" />
+      <workItem from="1630494962540" duration="964000" />
+      <workItem from="1630497927862" duration="1687000" />
+      <workItem from="1630848781418" duration="53000" />
+      <workItem from="1631174277713" duration="3257000" />
+      <workItem from="1631865272027" duration="8070000" />
     </task>
     <servers />
   </component>
@@ -201,6 +231,20 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/sources/controller/ProductController.java</url>
+          <line>36</line>
+          <properties class="sources.controller.ProductController" method="chitiet">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

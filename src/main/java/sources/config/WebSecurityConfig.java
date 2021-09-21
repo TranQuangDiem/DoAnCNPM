@@ -15,6 +15,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     UserService userService;
+    @Autowired
+    UserDetailFilter userDetailFilter;
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -51,11 +54,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Submit URL của trang login
                 .loginProcessingUrl("/login") // Submit URL
                 .loginPage("/login")//
-//                .defaultSuccessUrl("/")//
-                .failureUrl("/login?error=true")//
+                //.defaultSuccessUrl("/")//
+                //.and().exceptionHandling().authenticationEntryPoint(userDetailFilter)
+                //.failureUrl("/login?error=true")//
+                .successHandler(userDetailFilter)
+                .failureHandler(userDetailFilter)
                 .usernameParameter("email")//
                 .passwordParameter("pass")
                 // Cấu hình cho Logout Page.
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
+        ;
     }
 }

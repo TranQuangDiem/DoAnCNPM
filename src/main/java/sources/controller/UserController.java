@@ -137,6 +137,7 @@ public class UserController {
         if (userService.findByEmail(email)!=null){
             quenMatKhau.setEmail(email);
             userService.quenmatkhau(quenMatKhau);
+
             return "doimatkhau";
         }else {
             model.addAttribute("error","email không tồn tại trong hệ thống");
@@ -153,7 +154,8 @@ public class UserController {
                 return "doimatkhau";
             }
             if (userService.checkotp(quenMatKhau1)!=null){
-                user.setPass(pass);
+//                user.setPass(pass);
+                user.setPass(passwordEncoder.encode(pass));
                 userService.save(user);
                 quenMatKhau.setOtp(0);
                 quenMatKhau.setNgaytao(null);

@@ -57,6 +57,9 @@
                                     <div th:if="${#request.getParameter('error') == 'true'}" style="color:red">
                                         <span> Email hoặc password không đúng !</span>
                                     </div>
+                                    <div th:if="${#request.getParameter('error') == 'blocked'}" style="color:red">
+                                        <span> Tai khoan cua ban da bi khoa !</span>
+                                    </div>
                                     <span style="color: red" th:text="${error}"></span>
                                     <input type="email" required class="form-control" id="email" name="email" value=""
                                         placeholder="Email">
@@ -88,6 +91,11 @@
 <th:block th:include="/footer.html"></th:block>
 <!--::footer_part end::-->
     <!-- jquery plugins here-->
+    <script>
+        function getActive(email){
+
+        }
+    </script>
     <script th:src="@{js/jquery-1.12.1.min.js}"></script>
     <!-- popper js -->
     <script th:src="@{js/popper.min.js}"></script>
